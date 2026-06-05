@@ -1,0 +1,82 @@
+[
+  {
+    "id": "hiragana-kya",
+    "script": "hiragana",
+    "prompt": "Type kya in hiragana.",
+    "target": "きゃ",
+    "acceptedAnswers": ["きゃ"],
+    "romaji": "kya",
+    "keyboardTip": "Type k-y-a to produce きゃ. This is き plus small ゃ.",
+    "explanation": "Combination sounds use a normal i-row kana plus small ゃ, ゅ, or ょ."
+  },
+  {
+    "id": "hiragana-ryou",
+    "script": "hiragana",
+    "prompt": "Type ryou in hiragana.",
+    "target": "りょう",
+    "acceptedAnswers": ["りょう"],
+    "romaji": "ryou",
+    "keyboardTip": "Type r-y-o-u. The final u makes the long お sound in りょう.",
+    "explanation": "りょ plus う gives りょう, common in words like 配慮（はいりょ）."
+  },
+  {
+    "id": "hiragana-small-tsu",
+    "script": "hiragana",
+    "prompt": "Type gakkou in hiragana.",
+    "target": "がっこう",
+    "acceptedAnswers": ["がっこう"],
+    "romaji": "gakkou",
+    "keyboardTip": "Type ga-kko-u. Doubling the consonant creates small っ.",
+    "explanation": "Small っ marks a doubled consonant. It is typed by doubling the next consonant."
+  },
+  {
+    "id": "hiragana-n-before-vowel",
+    "script": "hiragana",
+    "prompt": "Type shin'ai in hiragana.",
+    "target": "しんあい",
+    "acceptedAnswers": ["しんあい"],
+    "romaji": "shin'ai",
+    "keyboardTip": "Type shi-nn-a-i or shi-n'-a-i so ん stays separate before あ.",
+    "explanation": "Before vowels, use nn or n' when you need ん."
+  },
+  {
+    "id": "katakana-coffee",
+    "script": "katakana",
+    "prompt": "Type coffee in katakana.",
+    "target": "コーヒー",
+    "acceptedAnswers": ["コーヒー"],
+    "romaji": "ko-hi-",
+    "keyboardTip": "Type ko-hi-. The hyphen creates the long vowel mark ー in katakana.",
+    "explanation": "Katakana loanwords often use ー for long vowels."
+  },
+  {
+    "id": "katakana-meeting",
+    "script": "katakana",
+    "prompt": "Type meeting in katakana.",
+    "target": "ミーティング",
+    "acceptedAnswers": ["ミーティング"],
+    "romaji": "mi-thingu",
+    "keyboardTip": "Type mi-ti-n-gu or mi-thingu depending on your IME. Use hyphen for ー.",
+    "explanation": "ティ is often typed as thi or texi depending on the keyboard/IME style."
+  },
+  {
+    "id": "katakana-file",
+    "script": "katakana",
+    "prompt": "Type file in katakana.",
+    "target": "ファイル",
+    "acceptedAnswers": ["ファイル"],
+    "romaji": "fairu",
+    "keyboardTip": "Type fa-i-ru. fa creates ファ.",
+    "explanation": "Foreign sounds like fa use small vowel combinations in katakana."
+  },
+  {
+    "id": "katakana-check",
+    "script": "katakana",
+    "prompt": "Type check in katakana.",
+    "target": "チェック",
+    "acceptedAnswers": ["チェック"],
+    "romaji": "chekku",
+    "keyboardTip": "Type che-kku. Doubling k creates small ッ.",
+    "explanation": "Katakana also uses small ッ for doubled consonants."
+  }
+]

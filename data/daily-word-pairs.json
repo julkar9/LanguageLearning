@@ -1,0 +1,591 @@
+[
+  {
+    "id": "discernment-ninshiki",
+    "title": "Discernment / 認識",
+    "english": {
+      "word": "discernment",
+      "meaning": "the ability to judge clearly and wisely, especially when details are subtle",
+      "simpleExplanation": "Discernment is careful judgment. You use it when the answer is not obvious and you need to notice quality, risk, motive, or nuance.",
+      "banglaMeaning": "বিচক্ষণতা; সূক্ষ্ম বিচারবুদ্ধি",
+      "sentences": [
+        "Good managers need discernment before changing a team policy.",
+        "Her discernment helped us avoid a risky contract.",
+        "In public debate, discernment matters more than quick reactions."
+      ],
+      "synonyms": ["judgment", "insight"],
+      "opposite": "naivety",
+      "speakingChallenge": "In 30 seconds, explain one decision in your life that required discernment."
+    },
+    "japanese": {
+      "word": "認識",
+      "reading": "にんしき",
+      "romaji": "ninshiki",
+      "meaning": "recognition; understanding; awareness",
+      "simpleExplanation": "認識 is how someone understands a fact, issue, risk, or situation. It is common in news, business, policy, and thoughtful discussion.",
+      "banglaMeaning": "উপলব্ধি; সচেতন বোঝাপড়া",
+      "sentences": [
+        {
+          "japanese": "問題の認識が甘かった。",
+          "reading": "もんだいのにんしきがあまかった。",
+          "english": "The understanding of the problem was too naive."
+        },
+        {
+          "japanese": "まず現状を正しく認識する必要がある。",
+          "reading": "まずげんじょうをただしくにんしきするひつようがある。",
+          "english": "First, we need to understand the current situation correctly."
+        },
+        {
+          "japanese": "その発言で彼の認識の浅さが明らかになった。",
+          "reading": "そのはつげんでかれのにんしきのあささがあきらかになった。",
+          "english": "That remark revealed how shallow his understanding was."
+        }
+      ],
+      "extraExamples": [
+        { "japanese": "共通認識", "reading": "きょうつうにんしき", "english": "shared understanding" },
+        { "japanese": "認識不足", "reading": "にんしきぶそく", "english": "lack of awareness" },
+        { "japanese": "現状認識", "reading": "げんじょうにんしき", "english": "understanding of the current situation" },
+        { "japanese": "認識を改める", "reading": "にんしきをあらためる", "english": "revise one's understanding" },
+        { "japanese": "危機認識", "reading": "ききにんしき", "english": "sense of crisis" }
+      ],
+      "synonyms": ["理解", "把握"],
+      "opposite": "誤解",
+      "speakingChallenge": "Use 認識 and discernment in one short opinion about work, study, or news.",
+      "kanjiFocus": {
+        "kanji": "識",
+        "radical": "言",
+        "components": ["言", "音", "戈"],
+        "strokeCount": 19,
+        "strokeOrderImagePath": "/artifacts/shiki_stroke_sheet.png",
+        "strokeSteps": [
+          "Strokes 1-7: write 言 on the left: dot, horizontal line, two short marks, then the 口 shape.",
+          "Strokes 8-16: build 音 on the upper-right: 立 on top, then 日 underneath.",
+          "Strokes 17-19: finish 戈 with the long diagonal, small cut, and final dot."
+        ],
+        "memoryStory": "言 means words, 音 means sound, and 戈 is a sharp weapon. 認識 is when words and sounds become sharp enough for you to recognize what is really happening.",
+        "sourceLinks": [
+          "https://jitenon.com/kanji/%E8%AD%98",
+          "https://kanjivg.tagaini.net/"
+        ]
+      }
+    },
+    "microStory": "A leader with discernment changed the team's 認識 by explaining the risk clearly instead of blaming anyone."
+  },
+  {
+    "id": "galvanize-unagasu",
+    "title": "Galvanize / 促す",
+    "english": {
+      "word": "galvanize",
+      "meaning": "to make people take action, often by stirring energy, concern, or urgency",
+      "simpleExplanation": "Galvanize is stronger than encourage. It means turning passive people into active people by giving them a clear reason to move.",
+      "banglaMeaning": "উদ্দীপ্ত করে কাজে লাগানো; সক্রিয় হতে প্ররোচিত করা",
+      "sentences": [
+        "The report galvanized parents to ask tougher questions at the school meeting.",
+        "Her calm message galvanized the team after a difficult release.",
+        "A clear deadline can galvanize people without making them panic."
+      ],
+      "synonyms": ["mobilize", "spur"],
+      "opposite": "discourage",
+      "speakingChallenge": "In 30 seconds, describe one message, deadline, or problem that could galvanize a team."
+    },
+    "japanese": {
+      "word": "促す",
+      "reading": "うながす",
+      "romaji": "unagasu",
+      "meaning": "to urge; to prompt; to encourage; to draw attention to",
+      "simpleExplanation": "促す is used when a person, event, policy, or problem pushes someone toward action, awareness, discussion, or change.",
+      "banglaMeaning": "তাগিদ দেওয়া; উৎসাহিত করা; কোনো কাজ বা সচেতনতার দিকে ধাবিত করা",
+      "sentences": [
+        {
+          "japanese": "政府は企業に賃上げを促した。",
+          "reading": "せいふはきぎょうにちんあげをうながした。",
+          "english": "The government urged companies to raise wages."
+        },
+        {
+          "japanese": "司会者は参加者に率直な意見を促した。",
+          "reading": "しかいしゃはさんかしゃにそっちょくないけんをうながした。",
+          "english": "The moderator encouraged participants to share candid opinions."
+        },
+        {
+          "japanese": "その失敗は私たちに手順の見直しを促した。",
+          "reading": "そのしっぱいはわたしたちにてじゅんのみなおしをうながした。",
+          "english": "That failure prompted us to review the procedure."
+        }
+      ],
+      "extraExamples": [
+        { "japanese": "注意を促す", "reading": "ちゅういをうながす", "english": "call attention; warn" },
+        { "japanese": "成長を促す", "reading": "せいちょうをうながす", "english": "encourage growth" },
+        { "japanese": "対応を促す", "reading": "たいおうをうながす", "english": "urge a response" },
+        { "japanese": "議論を促す", "reading": "ぎろんをうながす", "english": "stimulate discussion" },
+        { "japanese": "改善を促す", "reading": "かいぜんをうながす", "english": "prompt improvement" }
+      ],
+      "synonyms": ["働きかける", "後押しする"],
+      "opposite": "妨げる",
+      "speakingChallenge": "Use galvanize and 促す in one sentence about how clear feedback can lead to better action.",
+      "kanjiFocus": {
+        "kanji": "促",
+        "radical": "人（亻・にんべん）",
+        "components": ["亻", "足（口 + 龰）"],
+        "strokeCount": 9,
+        "strokeSteps": [
+          "Strokes 1-2: write 亻 on the left with a short left-falling stroke, then a vertical stroke.",
+          "Strokes 3-5: write the upper 口 part of 足 on the right.",
+          "Stroke 6: draw the vertical line descending from 口.",
+          "Strokes 7-9: add the short horizontal, left sweep, and long rightward foot to complete 足."
+        ],
+        "memoryStory": "亻 is a person and 足 is a foot. 促 is the moment a person is moved to step forward.",
+        "sourceLinks": [
+          "https://jitenon.com/kanji/%E4%BF%83",
+          "https://kanji.jitenon.jp/kanjic/1484",
+          "https://kanjivg.tagaini.net/files.html",
+          "https://commons.wikimedia.org/wiki/File:%E4%BF%83_-_U%2B04FC3-_KanjiVG_stroke_order.svg"
+        ]
+      }
+    },
+    "microStory": "A clear customer complaint galvanized the team and 促した a practical review of the release process."
+  },
+  {
+    "id": "pragmatic-jouho",
+    "title": "Pragmatic / 譲歩",
+    "english": {
+      "word": "pragmatic",
+      "meaning": "focused on what works in real life, not just theory",
+      "simpleExplanation": "A pragmatic person chooses useful action over perfect theory. It is a strong word for work, planning, negotiation, and problem solving.",
+      "banglaMeaning": "বাস্তববাদী; কার্যকরমুখী",
+      "sentences": [
+        "We need a pragmatic plan that the whole team can follow.",
+        "Her answer was pragmatic, not emotional.",
+        "A pragmatic compromise is better than a perfect idea nobody accepts."
+      ],
+      "synonyms": ["practical", "realistic"],
+      "opposite": "idealistic",
+      "speakingChallenge": "Describe one pragmatic choice you made this week."
+    },
+    "japanese": {
+      "word": "譲歩",
+      "reading": "じょうほ",
+      "romaji": "jouho",
+      "meaning": "concession; compromise",
+      "simpleExplanation": "譲歩 is giving some ground in a discussion or negotiation so both sides can move forward.",
+      "banglaMeaning": "ছাড়; সমঝোতা",
+      "sentences": [
+        {
+          "japanese": "双方が譲歩しなければ合意は難しい。",
+          "reading": "そうほうがじょうほしなければごういはむずかしい。",
+          "english": "Agreement is difficult unless both sides make concessions."
+        },
+        {
+          "japanese": "会社側は一部の条件で譲歩した。",
+          "reading": "かいしゃがわはいちぶのじょうけんでじょうほした。",
+          "english": "The company side made concessions on some conditions."
+        },
+        {
+          "japanese": "譲歩は弱さではなく、戦略になることもある。",
+          "reading": "じょうほはよわさではなく、せんりゃくになることもある。",
+          "english": "A concession is not weakness; it can also be a strategy."
+        }
+      ],
+      "extraExamples": [
+        { "japanese": "譲歩案", "reading": "じょうほあん", "english": "compromise proposal" },
+        { "japanese": "一歩譲歩する", "reading": "いっぽじょうほする", "english": "make one concession" },
+        { "japanese": "譲歩を求める", "reading": "じょうほをもとめる", "english": "ask for a concession" },
+        { "japanese": "譲歩の余地", "reading": "じょうほのよち", "english": "room for compromise" },
+        { "japanese": "大きな譲歩", "reading": "おおきなじょうほ", "english": "major concession" }
+      ],
+      "synonyms": ["妥協", "歩み寄り"],
+      "opposite": "強硬",
+      "speakingChallenge": "Use 譲歩 and pragmatic in one negotiation sentence.",
+      "kanjiFocus": {
+        "kanji": "譲",
+        "radical": "言（ごんべん）",
+        "components": [
+          "言（words; left-side radical）",
+          "㐮（right-side phonetic, abbreviated from 襄）",
+          "亠 + 八（top of 㐮）",
+          "三 + two verticals（middle of 㐮）",
+          "clothing-like sweeping strokes（bottom of 㐮）"
+        ],
+        "strokeCount": 20,
+        "strokeOrderImagePath": "/artifacts/jou_stroke_order.svg",
+        "strokeSteps": [
+          "Strokes 1-7: write 言 on the left: top dot, three horizontal strokes, then 口.",
+          "Strokes 8-11: start 㐮 with the short vertical and long horizontal at the top, then the left-falling stroke and right dot of 八.",
+          "Strokes 12-16: build the middle with one upper horizontal, two verticals, and two lower horizontals.",
+          "Strokes 17-20: finish the lower clothing-like shape with a left sweep, vertical hook, short left sweep, and long right sweep.",
+          "Balance cue: keep 言 compact and let the right side widen toward the final sweeping base."
+        ],
+        "memoryStory": "The 言 side is negotiation words, and the broad 㐮 side creates room. In 譲歩, those words help you yield one 歩, or step, without surrendering the whole position.",
+        "sourceLinks": [
+          "https://jitenon.com/kanji/%E8%AD%B2",
+          "https://kanji.jitenon.jp/kanjic/1446",
+          "https://kakijun.com/c/8b72.html",
+          "https://github.com/KanjiVG/kanjivg/blob/master/kanji/08b72.svg"
+        ]
+      }
+    },
+    "microStory": "A pragmatic manager made one small 譲歩 so the meeting could move from conflict to action."
+  },
+  {
+    "id": "meticulous-hairyo",
+    "title": "Meticulous / 配慮",
+    "english": {
+      "word": "meticulous",
+      "meaning": "extremely careful and attentive to details",
+      "simpleExplanation": "Meticulous describes careful work where small details matter. It is useful for documents, planning, research, and professional quality.",
+      "banglaMeaning": "খুঁটিনাটি বিষয়ে অত্যন্ত সতর্ক; নিখুঁতভাবে যত্নশীল",
+      "sentences": [
+        "She gave the proposal a meticulous final review.",
+        "Meticulous preparation saved us during the interview.",
+        "The report was meticulous without being too long."
+      ],
+      "synonyms": ["thorough", "precise"],
+      "opposite": "careless",
+      "speakingChallenge": "Talk about one task where meticulous preparation matters."
+    },
+    "japanese": {
+      "word": "配慮",
+      "reading": "はいりょ",
+      "romaji": "hairyo",
+      "meaning": "consideration; thoughtful care",
+      "simpleExplanation": "配慮 means thoughtful consideration for people, risks, timing, fairness, or context.",
+      "banglaMeaning": "বিবেচনা; যত্নশীল মনোযোগ",
+      "sentences": [
+        {
+          "japanese": "利用者への配慮が足りない設計だ。",
+          "reading": "りようしゃへのはいりょがたりないせっけいだ。",
+          "english": "It is a design that lacks consideration for users."
+        },
+        {
+          "japanese": "個人情報の扱いには十分な配慮が必要だ。",
+          "reading": "こじんじょうほうのあつかいにはじゅうぶんなはいりょがひつようだ。",
+          "english": "Sufficient consideration is needed when handling personal information."
+        },
+        {
+          "japanese": "彼女の発言には相手への配慮が感じられた。",
+          "reading": "かのじょのはつげんにはあいてへのはいりょがかんじられた。",
+          "english": "Her comment showed consideration for the other person."
+        }
+      ],
+      "extraExamples": [
+        { "japanese": "安全への配慮", "reading": "あんぜんへのはいりょ", "english": "consideration for safety" },
+        { "japanese": "環境に配慮する", "reading": "かんきょうにはいりょする", "english": "consider the environment" },
+        { "japanese": "配慮に欠ける", "reading": "はいりょにかける", "english": "lack consideration" },
+        { "japanese": "細かな配慮", "reading": "こまかなはいりょ", "english": "careful attention to detail" },
+        { "japanese": "配慮ある対応", "reading": "はいりょあるたいおう", "english": "considerate response" }
+      ],
+      "synonyms": ["考慮", "気配り"],
+      "opposite": "無配慮",
+      "speakingChallenge": "Use meticulous and 配慮 to describe good communication at work.",
+      "kanjiFocus": {
+        "kanji": "慮",
+        "radical": "心",
+        "components": ["虍", "田", "心"],
+        "strokeCount": 15,
+        "strokeSteps": [
+          "Start with the top 虍 shape.",
+          "Write the middle 田-like part below it.",
+          "Finish with 心 at the bottom, keeping the dots balanced."
+        ],
+        "memoryStory": "慮 has 心 at the bottom, so remember it as thinking with the heart before acting.",
+        "sourceLinks": ["https://jitenon.com/kanji/%E6%85%AE"]
+      }
+    },
+    "microStory": "A meticulous engineer showed 配慮 by making the instructions clear for new team members."
+  },
+  {
+    "id": "egregious-hanahadashii",
+    "title": "Egregious / 甚だしい",
+    "english": {
+      "word": "egregious",
+      "meaning": "extremely bad in a clear, shocking, or unacceptable way",
+      "simpleExplanation": "Egregious is stronger than bad. Use it for a mistake, failure, delay, or behavior that is obviously unacceptable.",
+      "banglaMeaning": "অত্যন্ত খারাপ; স্পষ্টভাবে গুরুতর ও অগ্রহণযোগ্য",
+      "sentences": [
+        "The contract had an egregious privacy flaw.",
+        "Ignoring repeated safety warnings was an egregious mistake.",
+        "The report exposed egregious delays in the approval process."
+      ],
+      "synonyms": ["flagrant", "appalling"],
+      "opposite": "minor",
+      "speakingChallenge": "In 30 seconds, describe one egregious mistake that a company or team should never ignore."
+    },
+    "japanese": {
+      "word": "甚だしい",
+      "reading": "はなはだしい",
+      "romaji": "hanahadashii",
+      "meaning": "extreme; severe; excessive; tremendous",
+      "simpleExplanation": "甚だしい describes a degree that is far beyond normal, often in a negative or critical context such as damage, delay, misunderstanding, unfairness, or negligence.",
+      "banglaMeaning": "চরম; মারাত্মক; মাত্রাতিরিক্ত; অত্যধিক",
+      "sentences": [
+        {
+          "japanese": "対応の遅れは甚だしい。",
+          "reading": "たいおうのおくれははなはだしい。",
+          "english": "The delay in the response is severe."
+        },
+        {
+          "japanese": "その説明は事実とのずれが甚だしい。",
+          "reading": "そのせつめいはじじつとのずれがはなはだしい。",
+          "english": "That explanation diverges sharply from the facts."
+        },
+        {
+          "japanese": "被害は甚だしく、復旧には時間がかかる。",
+          "reading": "ひがいははなはだしく、ふっきゅうにはじかんがかかる。",
+          "english": "The damage is severe, and recovery will take time."
+        }
+      ],
+      "extraExamples": [
+        { "japanese": "甚だしい誤解", "reading": "はなはだしいごかい", "english": "a serious misunderstanding" },
+        { "japanese": "差が甚だしい", "reading": "さがはなはだしい", "english": "the gap is extreme" },
+        { "japanese": "甚だしい遅延", "reading": "はなはだしいちえん", "english": "a severe delay" },
+        { "japanese": "甚だしく不適切", "reading": "はなはだしくふてきせつ", "english": "extremely inappropriate" },
+        { "japanese": "被害が甚だしい", "reading": "ひがいがはなはだしい", "english": "the damage is severe" }
+      ],
+      "synonyms": ["著しい", "極端な"],
+      "opposite": "軽微な",
+      "speakingChallenge": "Use egregious and 甚だしい to criticize a delay, mistake, or unfair policy in one concise sentence.",
+      "kanjiFocus": {
+        "kanji": "甚",
+        "radical": "甘",
+        "components": ["甘", "一", "儿", "卄", "丨"],
+        "strokeCount": 9,
+        "strokeSteps": [
+          "Stroke 1: draw the long top horizontal line of the 甘-shaped upper part.",
+          "Strokes 2-3: add the two vertical strokes that frame the upper structure.",
+          "Strokes 4-5: draw the two inner horizontal lines to complete the 甘-like top.",
+          "Stroke 6: draw the long horizontal line across the lower section.",
+          "Stroke 7: add the left-falling leg under the middle.",
+          "Stroke 8: write the right hooked leg, turning outward at the end.",
+          "Stroke 9: finish with the lower enclosing stroke that balances the bottom."
+        ],
+        "memoryStory": "甘 means sweet, but 甚 pushes the degree too far. Remember 甚だしい as sweetness or severity that has gone beyond the normal limit.",
+        "sourceLinks": [
+          "https://jitenon.com/kanji/%E7%94%9A",
+          "https://www.japandict.com/kanji/%E7%94%9A",
+          "https://kanjivg.tagaini.net/",
+          "https://raw.githubusercontent.com/KanjiVG/kanjivg/master/kanji/0751a.svg"
+        ]
+      }
+    },
+    "microStory": "An egregious delay revealed a 甚だしい gap between the team's promises and its actual process."
+  },
+  {
+    "id": "exacerbate-jochou",
+    "title": "Exacerbate / 助長",
+    "english": {
+      "word": "exacerbate",
+      "meaning": "to make a problem, pain, conflict, or bad situation worse",
+      "simpleExplanation": "Exacerbate is a formal verb for worsening an already negative situation. It is useful in essays, meetings, news, policy, health, and risk discussions.",
+      "banglaMeaning": "আরও খারাপ করে তোলা; সমস্যা বা ক্ষতি বাড়িয়ে দেওয়া",
+      "sentences": [
+        "A vague apology can exacerbate public concern.",
+        "Ignoring small security warnings may exacerbate the damage later.",
+        "The new rule was meant to help, but it exacerbated confusion among users."
+      ],
+      "synonyms": ["worsen", "aggravate"],
+      "opposite": "mitigate",
+      "speakingChallenge": "In 30 seconds, explain one habit or policy that can exacerbate a small problem."
+    },
+    "japanese": {
+      "word": "助長",
+      "reading": "じょちょう",
+      "romaji": "jochou",
+      "meaning": "encouragement; promotion; making an undesirable tendency stronger",
+      "simpleExplanation": "助長 means helping something grow, but in modern formal use it often means unintentionally making a bad tendency worse, such as anxiety, confusion, dependence, or conflict.",
+      "banglaMeaning": "উসকে দেওয়া; খারাপ প্রবণতা আরও বাড়ানো; অনিচ্ছাকৃতভাবে ক্ষতি বাড়ানো",
+      "sentences": [
+        {
+          "japanese": "曖昧な説明は利用者の懸念を助長しかねない。",
+          "reading": "あいまいなせつめいはりようしゃのけねんをじょちょうしかねない。",
+          "english": "A vague explanation could exacerbate users' concerns."
+        },
+        {
+          "japanese": "過度な介入は、かえって依存を助長することがある。",
+          "reading": "かどなかいにゅうは、かえっていぞんをじょちょうすることがある。",
+          "english": "Excessive intervention can sometimes foster dependence instead."
+        },
+        {
+          "japanese": "不正確な情報が混乱を助長し、被害を甚だしくした。",
+          "reading": "ふせいかくなじょうほうがこんらんをじょちょうし、ひがいをはなはだしくした。",
+          "english": "Inaccurate information exacerbated confusion and made the damage severe."
+        }
+      ],
+      "extraExamples": [
+        { "japanese": "不安を助長する", "reading": "ふあんをじょちょうする", "english": "exacerbate anxiety" },
+        { "japanese": "対立を助長する", "reading": "たいりつをじょちょうする", "english": "intensify conflict" },
+        { "japanese": "混乱を助長しかねない", "reading": "こんらんをじょちょうしかねない", "english": "may worsen confusion" },
+        { "japanese": "依存を助長する仕組み", "reading": "いぞんをじょちょうするしくみ", "english": "a system that fosters dependence" },
+        { "japanese": "助長ではなく抑制が必要だ", "reading": "じょちょうではなくよくせいがひつようだ", "english": "restraint is needed, not encouragement" }
+      ],
+      "synonyms": ["促進", "増幅"],
+      "opposite": "抑制",
+      "speakingChallenge": "Use exacerbate and 助長 to explain how poor communication can make 懸念 stronger.",
+      "kanjiFocus": {
+        "kanji": "助",
+        "radical": "力",
+        "components": ["且", "力"],
+        "strokeCount": 7,
+        "strokeSteps": [
+          "Strokes 1-5: write 且 on the left, keeping the box tall and the inner horizontal lines even.",
+          "Stroke 6: write the right-side 力 with the slanting stroke that hooks downward.",
+          "Stroke 7: finish 力 with the left-falling stroke, leaving space between 且 and 力."
+        ],
+        "memoryStory": "且 looks like something already standing there, and 力 adds force. 助 is force added to something; in 助長, too much added force can make a bad tendency grow.",
+        "sourceLinks": [
+          "https://kanji.jitenon.jp/kanji/330",
+          "https://www.japandict.com/kanji/%E5%8A%A9",
+          "https://kanjivg.tagaini.net/",
+          "https://raw.githubusercontent.com/KanjiVG/kanjivg/master/kanji/052a9.svg"
+        ]
+      }
+    },
+    "microStory": "A manager tried to calm the team, but vague updates exacerbated anxiety and 助長した mistrust."
+  },
+  {
+    "id": "apprehension-kenen",
+    "title": "Apprehension / 懸念",
+    "english": {
+      "word": "apprehension",
+      "meaning": "a cautious feeling of worry or unease about something that may happen",
+      "simpleExplanation": "Apprehension is a thoughtful kind of anxiety. It is useful when you want to describe a future risk, not just a personal fear.",
+      "banglaMeaning": "আশঙ্কা; ভবিষ্যৎ ঝুঁকি নিয়ে উদ্বেগ",
+      "sentences": [
+        "Many users felt apprehension before the company explained the new privacy rule.",
+        "Her apprehension was reasonable because the deadline and requirements were still unclear.",
+        "A careful manager listens to apprehension before it turns into public criticism."
+      ],
+      "synonyms": ["concern", "unease"],
+      "opposite": "confidence",
+      "speakingChallenge": "In 30 seconds, describe one professional situation where apprehension is reasonable rather than emotional."
+    },
+    "japanese": {
+      "word": "懸念",
+      "reading": "けねん",
+      "romaji": "kenen",
+      "meaning": "concern; worry; apprehension about a possible problem",
+      "simpleExplanation": "懸念 is a formal word for concern about a risk, often used in business, news, policy, and careful discussion.",
+      "banglaMeaning": "উদ্বেগ; আশঙ্কা; সম্ভাব্য সমস্যা নিয়ে চিন্তা",
+      "sentences": [
+        {
+          "japanese": "新制度への懸念が社内で広がっている。",
+          "reading": "しんせいどへのけねんがしゃないでひろがっている。",
+          "english": "Concern about the new system is spreading inside the company."
+        },
+        {
+          "japanese": "情報が不足すると、利用者の懸念はさらに強まる。",
+          "reading": "じょうほうがふそくすると、りようしゃのけねんはさらにつよまる。",
+          "english": "When information is lacking, users' concerns become even stronger."
+        },
+        {
+          "japanese": "彼女は感情的に反対するのではなく、具体的な懸念を示した。",
+          "reading": "かのじょはかんじょうてきにはんたいするのではなく、ぐたいてきなけねんをしめした。",
+          "english": "She did not object emotionally; she presented specific concerns."
+        }
+      ],
+      "extraExamples": [
+        { "japanese": "懸念を抱く", "reading": "けねんをいだく", "english": "to have concerns" },
+        { "japanese": "懸念を示す", "reading": "けねんをしめす", "english": "to express concern" },
+        { "japanese": "懸念材料", "reading": "けねんざいりょう", "english": "a source of concern" },
+        { "japanese": "安全性への懸念", "reading": "あんぜんせいへのけねん", "english": "concerns about safety" },
+        { "japanese": "懸念が残る", "reading": "けねんがのこる", "english": "concerns remain" }
+      ],
+      "synonyms": ["危惧", "憂慮"],
+      "opposite": "安心",
+      "speakingChallenge": "Use apprehension and 懸念 to explain why a vague announcement can make people cautious.",
+      "kanjiFocus": {
+        "kanji": "懸",
+        "radical": "心（こころ・したごころ）",
+        "components": ["県", "系", "心"],
+        "strokeCount": 20,
+        "strokeSteps": [
+          "Strokes 1-9: write 県 on the upper left, keeping the 目-like box compact and upright.",
+          "Strokes 10-16: write 系 on the upper right, with the short top stroke, the thread shape, and the small lower strokes balanced beside 県.",
+          "Strokes 17-20: finish 心 along the bottom with the left dot, central hook, and two right-side dots spread evenly.",
+          "Practice tip: keep 県 and 系 level on top, then let 心 anchor the whole kanji at the bottom."
+        ],
+        "memoryStory": "県 is something visible, 系 is a thread, and 心 is the heart. 懸 is a visible issue hanging by a thread in your heart, which becomes 懸念 when it will not leave your mind.",
+        "sourceLinks": [
+          "https://jitenon.com/kanji/%E6%87%B8",
+          "https://kanji.jitenon.jp/kanjid/1678",
+          "https://kakijun.com/c/61f8.html",
+          "https://kakijun.jp/page/2002200.html",
+          "https://kanjivg.tagaini.net/"
+        ]
+      }
+    },
+    "microStory": "A product lead noticed the team's apprehension and named the real 懸念 before the launch meeting became defensive."
+  },
+  {
+    "id": "enactment-shikou",
+    "title": "Enactment / 施行",
+    "english": {
+      "word": "enactment",
+      "meaning": "the act of making a law, rule, or policy official and active",
+      "simpleExplanation": "Enactment is a formal word for the moment a rule becomes real in practice. It is useful for laws, policies, compliance, contracts, and workplace rules.",
+      "banglaMeaning": "আইন বা নিয়ম আনুষ্ঠানিকভাবে কার্যকর করা; বাস্তব প্রয়োগ",
+      "sentences": [
+        "The enactment of the new privacy rule forced companies to update their forms.",
+        "After enactment, vague guidance from the agency created confusion for smaller teams.",
+        "Lawmakers debated the bill for months, but its enactment happened quickly."
+      ],
+      "synonyms": ["implementation", "enforcement"],
+      "opposite": "repeal",
+      "speakingChallenge": "In 30 seconds, explain one rule whose enactment would change daily work for a team."
+    },
+    "japanese": {
+      "word": "施行",
+      "reading": "しこう",
+      "romaji": "shikou",
+      "meaning": "enforcement; putting a law, rule, or system into effect",
+      "simpleExplanation": "施行 is a formal word for when a law, rule, policy, or system starts to apply. For legal and policy contexts, read it as しこう; do not confuse it with 施工（せこう）, which is construction work.",
+      "banglaMeaning": "আইন, নিয়ম, নীতি বা ব্যবস্থা কার্যকর করা; প্রয়োগ শুরু করা",
+      "sentences": [
+        {
+          "japanese": "新しい個人情報保護規則は来月施行される。",
+          "reading": "あたらしいこじんじょうほうほごきそくはらいげつしこうされる。",
+          "english": "The new personal information protection rule will come into effect next month."
+        },
+        {
+          "japanese": "制度の施行後、企業には追加の報告義務が生じた。",
+          "reading": "せいどのしこうご、きぎょうにはついかのほうこくぎむがしょうじた。",
+          "english": "After the system was implemented, companies had additional reporting duties."
+        },
+        {
+          "japanese": "施行の時期が曖昧だと、現場の混乱を招きかねない。",
+          "reading": "しこうのじきがあいまいだと、げんばのこんらんをまねきかねない。",
+          "english": "If the timing of enforcement is vague, it may cause confusion on the ground."
+        }
+      ],
+      "extraExamples": [
+        { "japanese": "法律の施行", "reading": "ほうりつのしこう", "english": "enforcement of a law" },
+        { "japanese": "施行日", "reading": "しこうび", "english": "effective date" },
+        { "japanese": "施行規則", "reading": "しこうきそく", "english": "enforcement regulation" },
+        { "japanese": "全面施行", "reading": "ぜんめんしこう", "english": "full implementation" },
+        { "japanese": "施行を延期する", "reading": "しこうをえんきする", "english": "postpone enforcement" }
+      ],
+      "synonyms": ["実施", "執行"],
+      "opposite": "廃止",
+      "speakingChallenge": "Use enactment and 施行 to explain why clear timing matters when a new rule starts.",
+      "kanjiFocus": {
+        "kanji": "施",
+        "radical": "方（ほうへん・かたへん）",
+        "components": ["方", "𠂉", "也"],
+        "strokeCount": 9,
+        "strokeSteps": [
+          "Strokes 1-4: write the left 方 component first, keeping it narrow so the right side has room.",
+          "Strokes 5-6: start the upper-right 𠂉 with the left-falling stroke, then add the long horizontal stroke.",
+          "Stroke 7: draw the broad bending stroke of 也 across the middle-right area.",
+          "Stroke 8: add the central vertical stroke of 也.",
+          "Stroke 9: finish 也 with the long lower sweep and final upward hook."
+        ],
+        "memoryStory": "方 suggests a direction or method, 𠂉 starts the right-side structure, and 也 spreads out like something being set in place. 施 is a method carried out in the real world, which makes 施行 the moment a rule actually takes effect.",
+        "sourceLinks": [
+          "https://jitenon.com/kanji/%E6%96%BD",
+          "https://kanji.jitenon.jp/kanjic/1423",
+          "https://kakijun.com/c/65bd.html",
+          "https://kanjivg.tagaini.net/",
+          "https://raw.githubusercontent.com/KanjiVG/kanjivg/master/kanji/065bd.svg"
+        ]
+      }
+    },
+    "microStory": "A compliance lead explained the enactment timeline clearly, so the team understood when the new rule would be 施行される."
+  }
+]

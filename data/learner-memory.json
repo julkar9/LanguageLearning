@@ -1,0 +1,440 @@
+{
+  "learner": {
+    "displayName": "Julkarnine",
+    "japaneseLevel": "N2 passed; preparing for N1",
+    "explanationLanguage": "English"
+  },
+  "taughtItemIds": [
+    "vocab-kenen",
+    "vocab-unagasu",
+    "vocab-shikou",
+    "vocab-jouho",
+    "vocab-hanahadashii",
+    "kanji-shiki",
+    "kanji-jou"
+  ],
+  "reviews": [
+    {
+      "itemId": "vocab-kenen",
+      "answeredAt": "2026-05-28T08:44:07.929Z",
+      "answer": "けねん",
+      "correct": true
+    },
+    {
+      "itemId": "vocab-unagasu",
+      "answeredAt": "2026-05-28T09:02:50.729Z",
+      "answer": "tasu",
+      "correct": false
+    },
+    {
+      "itemId": "vocab-shikou",
+      "answeredAt": "2026-05-28T09:08:22.534Z",
+      "answer": "jikoo sarereu",
+      "correct": false
+    },
+    {
+      "itemId": "vocab-jouho",
+      "answeredAt": "2026-05-28T09:13:10.336Z",
+      "answer": "むずかし",
+      "correct": false
+    },
+    {
+      "itemId": "vocab-unagasu",
+      "answeredAt": "2026-05-28T09:39:07.772Z",
+      "answer": "tasu",
+      "correct": false
+    },
+    {
+      "itemId": "vocab-unagasu",
+      "answeredAt": "2026-05-28T10:08:49.236Z",
+      "answer": "たつ",
+      "correct": false
+    },
+    {
+      "itemId": "vocab-unagasu",
+      "answeredAt": "2026-05-30T15:29:05.620Z",
+      "answer": "促す",
+      "correct": false
+    },
+    {
+      "itemId": "vocab-shikou",
+      "answeredAt": "2026-05-30T15:29:35.429Z",
+      "answer": "しこう",
+      "correct": true
+    },
+    {
+      "itemId": "vocab-unagasu",
+      "answeredAt": "2026-05-31T03:43:02.787Z",
+      "answer": "うながす",
+      "correct": true
+    },
+    {
+      "itemId": "vocab-jouho",
+      "answeredAt": "2026-05-31T03:58:20.940Z",
+      "answer": "促す",
+      "correct": false
+    },
+    {
+      "itemId": "vocab-kenen",
+      "answeredAt": "2026-05-31T04:04:39.536Z",
+      "answer": "記念",
+      "correct": false
+    },
+    {
+      "itemId": "vocab-hanahadashii",
+      "answeredAt": "2026-05-31T04:25:41.249Z",
+      "answer": "だしい",
+      "correct": false
+    },
+    {
+      "itemId": "kanji-shiki",
+      "answeredAt": "2026-05-31T04:26:40.459Z",
+      "answer": "人しく",
+      "correct": false
+    },
+    {
+      "itemId": "vocab-kenen",
+      "answeredAt": "2026-06-01T07:13:50.528Z",
+      "answer": "ki nene",
+      "correct": false
+    },
+    {
+      "itemId": "vocab-jouho",
+      "answeredAt": "2026-06-01T07:14:24.564Z",
+      "answer": "compromise",
+      "correct": true
+    },
+    {
+      "itemId": "vocab-hanahadashii",
+      "answeredAt": "2026-06-01T07:15:12.309Z",
+      "answer": "hanahadashi",
+      "correct": false
+    },
+    {
+      "itemId": "kanji-shiki",
+      "answeredAt": "2026-06-01T07:16:02.165Z",
+      "answer": "ki",
+      "correct": false
+    },
+    {
+      "itemId": "vocab-unagasu",
+      "answeredAt": "2026-06-01T07:16:36.060Z",
+      "answer": "unagashi",
+      "correct": false
+    },
+    {
+      "itemId": "kanji-jou",
+      "answeredAt": "2026-06-01T07:17:12.304Z",
+      "answer": "いど",
+      "correct": false
+    },
+    {
+      "itemId": "vocab-kenen",
+      "answeredAt": "2026-06-04T08:20:24.883Z",
+      "answer": "kinen",
+      "correct": false
+    },
+    {
+      "itemId": "vocab-unagasu",
+      "answeredAt": "2026-06-04T08:20:42.029Z",
+      "answer": "unagasu",
+      "correct": false
+    },
+    {
+      "itemId": "vocab-hanahadashii",
+      "answeredAt": "2026-06-04T08:21:02.431Z",
+      "answer": "うながす",
+      "correct": false
+    },
+    {
+      "itemId": "kanji-shiki",
+      "answeredAt": "2026-06-04T08:54:12.425Z",
+      "answer": "四季",
+      "correct": false
+    },
+    {
+      "itemId": "kanji-jou",
+      "answeredAt": "2026-06-04T09:58:41.160Z",
+      "answer": "sdf",
+      "correct": false
+    },
+    {
+      "itemId": "vocab-shikou",
+      "answeredAt": "2026-06-04T10:04:11.639Z",
+      "answer": "しこう",
+      "correct": true
+    },
+    {
+      "itemId": "vocab-kenen",
+      "answeredAt": "2026-06-05T00:07:16.945Z",
+      "answer": "kana",
+      "correct": false
+    },
+    {
+      "itemId": "vocab-unagasu",
+      "answeredAt": "2026-06-05T00:07:42.429Z",
+      "answer": "うながす",
+      "correct": true
+    },
+    {
+      "itemId": "vocab-hanahadashii",
+      "answeredAt": "2026-06-05T00:08:04.708Z",
+      "answer": "damage",
+      "correct": false
+    },
+    {
+      "itemId": "kanji-shiki",
+      "answeredAt": "2026-06-05T00:08:14.864Z",
+      "answer": "shiki",
+      "correct": false
+    },
+    {
+      "itemId": "kanji-jou",
+      "answeredAt": "2026-06-05T00:08:28.143Z",
+      "answer": "give up",
+      "correct": false
+    },
+    {
+      "itemId": "vocab-jouho",
+      "answeredAt": "2026-06-05T00:08:36.826Z",
+      "answer": "shikou",
+      "correct": false
+    },
+    {
+      "itemId": "vocab-kenen",
+      "answeredAt": "2026-06-05T07:48:34.269Z",
+      "answer": "keinen",
+      "correct": false
+    },
+    {
+      "itemId": "vocab-jouho",
+      "answeredAt": "2026-06-05T07:48:51.345Z",
+      "answer": "shiko",
+      "correct": false
+    }
+  ],
+  "itemStats": {
+    "vocab-kenen": {
+      "itemId": "vocab-kenen",
+      "strength": 0,
+      "seenCount": 6,
+      "correctCount": 1,
+      "incorrectCount": 5,
+      "nextReviewAt": "2026-06-05T07:48:34.269Z",
+      "lastReviewedAt": "2026-06-05T07:48:34.269Z"
+    },
+    "vocab-unagasu": {
+      "itemId": "vocab-unagasu",
+      "strength": 1,
+      "seenCount": 8,
+      "correctCount": 2,
+      "incorrectCount": 6,
+      "nextReviewAt": "2026-06-06T00:07:42.429Z",
+      "lastReviewedAt": "2026-06-05T00:07:42.429Z"
+    },
+    "vocab-shikou": {
+      "itemId": "vocab-shikou",
+      "strength": 2,
+      "seenCount": 3,
+      "correctCount": 2,
+      "incorrectCount": 1,
+      "nextReviewAt": "2026-06-07T10:04:11.639Z",
+      "lastReviewedAt": "2026-06-04T10:04:11.639Z"
+    },
+    "vocab-jouho": {
+      "itemId": "vocab-jouho",
+      "strength": 0,
+      "seenCount": 5,
+      "correctCount": 1,
+      "incorrectCount": 4,
+      "nextReviewAt": "2026-06-05T07:48:51.345Z",
+      "lastReviewedAt": "2026-06-05T07:48:51.345Z"
+    },
+    "vocab-hanahadashii": {
+      "itemId": "vocab-hanahadashii",
+      "strength": 0,
+      "seenCount": 4,
+      "correctCount": 0,
+      "incorrectCount": 4,
+      "nextReviewAt": "2026-06-05T00:08:04.708Z",
+      "lastReviewedAt": "2026-06-05T00:08:04.708Z"
+    },
+    "kanji-shiki": {
+      "itemId": "kanji-shiki",
+      "strength": 0,
+      "seenCount": 4,
+      "correctCount": 0,
+      "incorrectCount": 4,
+      "nextReviewAt": "2026-06-05T00:08:14.864Z",
+      "lastReviewedAt": "2026-06-05T00:08:14.864Z"
+    },
+    "kanji-jou": {
+      "itemId": "kanji-jou",
+      "strength": 0,
+      "seenCount": 3,
+      "correctCount": 0,
+      "incorrectCount": 3,
+      "nextReviewAt": "2026-06-05T00:08:28.143Z",
+      "lastReviewedAt": "2026-06-05T00:08:28.143Z"
+    }
+  },
+  "mistakes": [
+    {
+      "itemId": "vocab-kenen",
+      "wrongAnswer": "keinen",
+      "correction": "concern; worry",
+      "explanation": "懸念 is a formal word for a serious concern, often used in news, policy, and business contexts.",
+      "keyboardTip": "Type ke-n-e-n for けねん. Use the conversion key or spacebar to select 懸念.",
+      "missedAt": "2026-06-05T07:48:34.269Z",
+      "count": 5
+    },
+    {
+      "itemId": "vocab-jouho",
+      "wrongAnswer": "shiko",
+      "correction": "concession; compromise",
+      "explanation": "譲歩 is a concession made during conflict, negotiation, or debate.",
+      "keyboardTip": "Type jo-u-ho for じょうほ, then convert to 譲歩.",
+      "missedAt": "2026-06-05T07:48:51.345Z",
+      "count": 4
+    },
+    {
+      "itemId": "kanji-jou",
+      "wrongAnswer": "give up",
+      "correction": "yield; transfer; concede",
+      "explanation": "譲 appears in 譲歩, 譲渡, and 譲る.",
+      "keyboardTip": "Type jo-u for じょう. For 譲る, type yu-zu-ru.",
+      "missedAt": "2026-06-05T00:08:28.143Z",
+      "count": 3
+    },
+    {
+      "itemId": "kanji-shiki",
+      "wrongAnswer": "shiki",
+      "correction": "knowledge; recognition",
+      "explanation": "識 appears in 知識, 認識, 意識, and 常識.",
+      "keyboardTip": "Type shi-ki for しき. Convert from words like ちしき or にんしき when needed.",
+      "missedAt": "2026-06-05T00:08:14.864Z",
+      "count": 4
+    },
+    {
+      "itemId": "vocab-hanahadashii",
+      "wrongAnswer": "damage",
+      "correction": "extreme; severe; excessive",
+      "explanation": "甚だしい describes a degree that is far beyond normal, usually negative.",
+      "keyboardTip": "Type ha-na-ha-da-shi-i for はなはだしい.",
+      "missedAt": "2026-06-05T00:08:04.708Z",
+      "count": 4
+    },
+    {
+      "itemId": "vocab-unagasu",
+      "wrongAnswer": "unagasu",
+      "correction": "to urge; to prompt; to encourage",
+      "explanation": "促す means to push someone or something toward an action or change.",
+      "keyboardTip": "Type u-na-ga-su for うながす, then convert to 促す.",
+      "missedAt": "2026-06-04T08:20:42.029Z",
+      "count": 6
+    },
+    {
+      "itemId": "vocab-shikou",
+      "wrongAnswer": "jikoo sarereu",
+      "correction": "enforcement; putting into effect",
+      "explanation": "施行 is often used when a law, rule, or system takes effect.",
+      "keyboardTip": "Type shi-ko-u for しこう. Long お sounds are often typed with u in Japanese IME.",
+      "missedAt": "2026-05-28T09:08:22.534Z",
+      "count": 1
+    }
+  ],
+  "lastSessionAt": "2026-06-05T07:48:51.345Z",
+  "kanaReviews": [
+    {
+      "itemId": "hiragana-kya",
+      "answeredAt": "2026-06-04T08:54:40.229Z",
+      "answer": "きや",
+      "correct": false,
+      "expected": "きゃ"
+    },
+    {
+      "itemId": "katakana-meeting",
+      "answeredAt": "2026-05-31T04:29:19.669Z",
+      "answer": "ミーチーんぐ",
+      "correct": false,
+      "expected": "ミーティング"
+    },
+    {
+      "itemId": "katakana-coffee",
+      "answeredAt": "2026-05-31T04:28:27.840Z",
+      "answer": "コーヒー",
+      "correct": true,
+      "expected": "コーヒー"
+    },
+    {
+      "itemId": "hiragana-n-before-vowel",
+      "answeredAt": "2026-05-31T04:28:08.081Z",
+      "answer": "しんあい",
+      "correct": true,
+      "expected": "しんあい"
+    },
+    {
+      "itemId": "hiragana-ryou",
+      "answeredAt": "2026-05-31T04:05:48.431Z",
+      "answer": "りょう",
+      "correct": true,
+      "expected": "りょう"
+    },
+    {
+      "itemId": "hiragana-small-tsu",
+      "answeredAt": "2026-05-31T04:05:31.348Z",
+      "answer": "がっこう",
+      "correct": true,
+      "expected": "がっこう"
+    },
+    {
+      "itemId": "hiragana-kya",
+      "answeredAt": "2026-05-31T04:05:02.528Z",
+      "answer": "きや",
+      "correct": false,
+      "expected": "きゃ"
+    },
+    {
+      "itemId": "hiragana-small-tsu",
+      "answeredAt": "2026-05-30T15:29:51.233Z",
+      "answer": "がっこう",
+      "correct": true,
+      "expected": "がっこう"
+    },
+    {
+      "itemId": "hiragana-small-tsu",
+      "answeredAt": "2026-05-28T10:09:11.233Z",
+      "answer": "学校",
+      "correct": false,
+      "expected": "がっこう"
+    },
+    {
+      "itemId": "hiragana-ryou",
+      "answeredAt": "2026-05-28T10:08:20.601Z",
+      "answer": "りょう",
+      "correct": true,
+      "expected": "りょう"
+    },
+    {
+      "itemId": "hiragana-kya",
+      "answeredAt": "2026-05-28T10:08:03.943Z",
+      "answer": "きy",
+      "correct": false,
+      "expected": "きゃ"
+    },
+    {
+      "itemId": "hiragana-ryou",
+      "answeredAt": "2026-05-28T09:37:51.659Z",
+      "answer": "りょう",
+      "correct": true,
+      "expected": "りょう"
+    },
+    {
+      "itemId": "hiragana-kya",
+      "answeredAt": "2026-05-28T09:37:20.358Z",
+      "answer": "きゃ",
+      "correct": true,
+      "expected": "きゃ"
+    }
+  ]
+}
