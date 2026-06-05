@@ -175,3 +175,65 @@ export interface DailyWordPair {
   japanese: JapaneseWordLesson;
   microStory: string;
 }
+
+export interface ReadingLabPassage {
+  id: string;
+  title: string;
+  theme: string;
+  difficulty: "N1";
+  estimatedMinutes: number;
+  focus: string;
+  passage: string[];
+  argumentMap: ReadingArgumentPoint[];
+  discourseMarkers: ReadingDiscourseMarker[];
+  vocabulary: ReadingVocabularyItem[];
+  traps: ReadingTrap[];
+  questions: ReadingQuestion[];
+  paraphrases: ReadingParaphrase[];
+  rereadPlan: ReadingRereadStep[];
+  summaryChallenge: string;
+}
+
+export interface ReadingArgumentPoint {
+  label: string;
+  content: string;
+}
+
+export interface ReadingDiscourseMarker {
+  marker: string;
+  function: string;
+  cue: string;
+}
+
+export interface ReadingVocabularyItem {
+  expression: string;
+  reading: string;
+  meaning: string;
+  note: string;
+}
+
+export interface ReadingTrap {
+  label: string;
+  trap: string;
+  whyItFails: string;
+  repair: string;
+}
+
+export interface ReadingQuestion {
+  prompt: string;
+  choices: string[];
+  answerIndex: number;
+  explanation: string;
+}
+
+export interface ReadingParaphrase {
+  original: string;
+  paraphrase: string;
+  note: string;
+}
+
+export interface ReadingRereadStep {
+  pass: string;
+  minutes: number;
+  goal: string;
+}

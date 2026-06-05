@@ -149,7 +149,7 @@ button:disabled .dwell-indicator {
 }
 
 .study-tabs {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
 }
 
 .word-pair-tabs {
@@ -241,6 +241,7 @@ button:disabled .dwell-indicator {
 
 .drill-panel,
 .kana-panel,
+.reading-panel,
 .memory-panel,
 .word-pair-panel,
 .loading-panel,
@@ -267,6 +268,7 @@ button:disabled .dwell-indicator {
 }
 
 .word-pair-panel,
+.reading-panel,
 .kana-panel {
   padding: 18px;
 }
@@ -539,6 +541,209 @@ button:disabled .dwell-indicator {
 .memory-panel {
   padding: 18px;
   position: static;
+}
+
+.reading-layout {
+  display: grid;
+  grid-template-columns: minmax(320px, 0.92fr) minmax(0, 1.08fr);
+  gap: 14px;
+  align-items: start;
+}
+
+.reading-passage,
+.reading-section {
+  border-radius: 8px;
+  padding: 16px;
+  background: #fffdf8;
+  border: 1px solid rgba(23, 32, 29, 0.1);
+}
+
+.reading-theme {
+  display: inline-flex;
+  margin-bottom: 14px;
+  border-radius: 8px;
+  padding: 6px 9px;
+  color: #194a43;
+  background: #e7f2ee;
+  font-weight: 900;
+}
+
+.passage-text {
+  display: grid;
+  gap: 14px;
+  color: #111814;
+  font-size: 1.02rem;
+  line-height: 1.85;
+}
+
+.passage-text p {
+  margin-bottom: 0;
+}
+
+.reading-analysis {
+  display: grid;
+  gap: 10px;
+}
+
+.reading-section h3 {
+  margin-bottom: 10px;
+}
+
+.argument-map,
+.reread-list,
+.choice-list {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding-left: 22px;
+}
+
+.argument-map li,
+.reread-list li {
+  padding-right: 4px;
+}
+
+.argument-map strong,
+.argument-map span,
+.reread-list strong,
+.reread-list span {
+  display: block;
+}
+
+.argument-map strong,
+.reread-list strong {
+  color: #194a43;
+}
+
+.marker-grid,
+.vocab-grid,
+.trap-list,
+.paraphrase-list {
+  display: grid;
+  gap: 8px;
+}
+
+.marker-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.vocab-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.marker-grid div,
+.vocab-grid div,
+.trap-list article,
+.paraphrase-list article {
+  border-radius: 8px;
+  padding: 10px;
+  background: #f6f8f7;
+  border: 1px solid rgba(23, 32, 29, 0.08);
+}
+
+.marker-grid strong,
+.marker-grid span,
+.vocab-grid strong,
+.vocab-grid span,
+.trap-list strong,
+.trap-list span,
+.trap-list em,
+.paraphrase-list span,
+.paraphrase-list em {
+  display: block;
+}
+
+.marker-grid strong,
+.vocab-grid strong,
+.trap-list strong {
+  color: #194a43;
+}
+
+.marker-grid span,
+.vocab-grid span,
+.trap-list span,
+.paraphrase-list span,
+.reread-list span {
+  color: #66736d;
+}
+
+.marker-grid p,
+.vocab-grid p,
+.trap-list p,
+.paraphrase-list p {
+  margin: 5px 0 0;
+}
+
+.trap-list em,
+.paraphrase-list em {
+  margin-top: 5px;
+  color: #8b5a20;
+  font-style: normal;
+  font-weight: 800;
+}
+
+.question-prompt {
+  margin-bottom: 8px;
+  font-weight: 900;
+}
+
+.choice-list {
+  margin-bottom: 12px;
+}
+
+.choice-list li {
+  border-radius: 8px;
+  padding: 9px 10px;
+  background: #f6f8f7;
+}
+
+.choice-list span {
+  display: inline-grid;
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+  place-items: center;
+  border-radius: 50%;
+  color: #ffffff;
+  background: #66736d;
+  font-size: 0.8rem;
+  font-weight: 900;
+}
+
+.choice-list .is-correct-choice {
+  background: #edf8ef;
+  border: 1px solid rgba(14, 110, 107, 0.22);
+}
+
+.choice-list .is-correct-choice span,
+.reveal-button {
+  background: #0e6e6b;
+}
+
+.reveal-button {
+  display: inline-flex;
+  min-height: 38px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 0;
+  border-radius: 8px;
+  padding: 0 14px;
+  color: #ffffff;
+  font-weight: 900;
+  overflow: hidden;
+  position: relative;
+}
+
+.reading-answer {
+  margin-top: 10px;
+  border-radius: 8px;
+  padding: 10px;
+  background: #edf8ef;
+}
+
+.reading-answer p {
+  margin: 4px 0 0;
 }
 
 .panel-title {
@@ -925,6 +1130,9 @@ button:disabled .dwell-indicator {
 
   .category-meter,
   .stat-grid,
+  .reading-layout,
+  .marker-grid,
+  .vocab-grid,
   .stroke-layout,
   .review-examples,
   .example-list.compact {
@@ -957,6 +1165,9 @@ button:disabled .dwell-indicator {
   }
 
   .stroke-layout,
+  .reading-layout,
+  .marker-grid,
+  .vocab-grid,
   .review-examples,
   .example-list.compact {
     grid-template-columns: 1fr;

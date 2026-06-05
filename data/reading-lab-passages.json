@@ -1,0 +1,258 @@
+[
+  {
+    "id": "policy-transparency",
+    "title": "制度の透明性と説明責任",
+    "theme": "Policy critique",
+    "difficulty": "N1",
+    "estimatedMinutes": 14,
+    "focus": "Track contrast, concession, and the author's final judgment instead of reading each sentence as equal.",
+    "passage": [
+      "新しい制度が導入されるたびに、利用者には少なからぬ負担が生じる。申請書の様式が変わる、確認項目が増える、あるいはこれまで黙認されていた手続きが明文化される。こうした変化は、短期的には不便として受け止められやすい。",
+      "とはいえ、負担そのものが常に問題なのではない。人は、目的が共有され、判断基準が見える場合には、多少の手間を受け入れることができる。むしろ不信感を生むのは、何のための変更なのかが曖昧なまま、ただ協力だけを求められる状況である。",
+      "したがって、制度を定着させるには、効率化や公平性といった抽象的な言葉を掲げるだけでは不十分だ。どの不公平を減らし、どの判断を公開し、どの負担を一時的なものとして扱うのかを具体的に示す必要がある。説明責任は、導入後に批判を受けてから果たすものではなく、制度設計の段階で組み込まれるべき条件なのである。"
+    ],
+    "argumentMap": [
+      {
+        "label": "Opening situation",
+        "content": "New systems create visible burdens such as forms, checks, and stricter procedures."
+      },
+      {
+        "label": "Concession",
+        "content": "The author accepts that users can tolerate some burden when the purpose and criteria are clear."
+      },
+      {
+        "label": "Real problem",
+        "content": "Distrust grows when cooperation is demanded without a clear explanation of purpose."
+      },
+      {
+        "label": "Conclusion",
+        "content": "Accountability and transparency must be built into the design stage before enforcement begins."
+      }
+    ],
+    "discourseMarkers": [
+      {
+        "marker": "とはいえ",
+        "function": "concession",
+        "cue": "The first paragraph sounds negative, but this marker prevents the answer from becoming 'all burden is bad.'"
+      },
+      {
+        "marker": "むしろ",
+        "function": "real contrast",
+        "cue": "The author shifts from surface inconvenience to the deeper source of distrust."
+      },
+      {
+        "marker": "したがって",
+        "function": "conclusion",
+        "cue": "The final paragraph turns the analysis into the author's claim."
+      }
+    ],
+    "vocabulary": [
+      {
+        "expression": "黙認",
+        "reading": "もくにん",
+        "meaning": "tacit approval; overlooking something without explicit permission",
+        "note": "Often appears in policy, workplace, and rule-enforcement contexts."
+      },
+      {
+        "expression": "明文化",
+        "reading": "めいぶんか",
+        "meaning": "putting something into explicit written form",
+        "note": "N1 texts use this when implicit practice becomes official wording."
+      },
+      {
+        "expression": "説明責任",
+        "reading": "せつめいせきにん",
+        "meaning": "accountability; responsibility to explain",
+        "note": "A high-frequency abstract term in governance and business writing."
+      }
+    ],
+    "traps": [
+      {
+        "label": "Too extreme",
+        "trap": "The author rejects new systems because they always burden users.",
+        "whyItFails": "The concession says burden can be accepted when purpose and criteria are visible.",
+        "repair": "Keep the distinction between burden itself and unexplained burden."
+      },
+      {
+        "label": "Timing error",
+        "trap": "The author says explanation is only necessary after criticism appears.",
+        "whyItFails": "The final sentence says accountability should be built into the design stage.",
+        "repair": "Track 導入後 versus 制度設計の段階."
+      },
+      {
+        "label": "Keyword-only reading",
+        "trap": "Because 効率化 and 公平性 appear, the main point must be efficiency and fairness.",
+        "whyItFails": "Those words are examples of abstract slogans that are insufficient by themselves.",
+        "repair": "Check whether a keyword is being endorsed or criticized."
+      }
+    ],
+    "questions": [
+      {
+        "prompt": "筆者の主張に最も近いものはどれか。",
+        "choices": [
+          "制度の導入は利用者の負担を増やすため、できる限り避けるべきだ。",
+          "制度への協力を得るには、目的や判断基準を導入前から具体的に示す必要がある。",
+          "利用者の不信感を減らすには、導入後に批判を集めてから説明すればよい。",
+          "公平性や効率化という言葉を掲げれば、制度の負担は自然に受け入れられる。"
+        ],
+        "answerIndex": 1,
+        "explanation": "The answer must include timing, clarity, and cooperation. Choice 2 preserves the author's design-stage accountability claim."
+      }
+    ],
+    "paraphrases": [
+      {
+        "original": "目的が共有され、判断基準が見える場合には、多少の手間を受け入れることができる。",
+        "paraphrase": "なぜ必要なのか、どのように判断されるのかが分かれば、一定の負担にも納得しやすい。",
+        "note": "共有される becomes 分かれば; 判断基準が見える becomes どのように判断されるのか."
+      },
+      {
+        "original": "説明責任は、制度設計の段階で組み込まれるべき条件なのである。",
+        "paraphrase": "説明は後から付け足す対応ではなく、制度を作る時点で用意しておく必要がある。",
+        "note": "This paraphrase tests whether you preserve timing and necessity."
+      }
+    ],
+    "rereadPlan": [
+      {
+        "pass": "First pass",
+        "minutes": 4,
+        "goal": "Mark discourse turns: とはいえ, むしろ, したがって."
+      },
+      {
+        "pass": "Second pass",
+        "minutes": 5,
+        "goal": "Assign each paragraph one role: situation, contrast, conclusion."
+      },
+      {
+        "pass": "Final check",
+        "minutes": 3,
+        "goal": "Reject answer choices that turn a limited claim into an extreme claim."
+      }
+    ],
+    "summaryChallenge": "制度への協力を得るために、説明責任がなぜ導入前から必要なのかを一文でまとめる。"
+  },
+  {
+    "id": "workplace-evaluation",
+    "title": "評価制度と納得感",
+    "theme": "Workplace analysis",
+    "difficulty": "N1",
+    "estimatedMinutes": 13,
+    "focus": "Separate the author's claim from the workplace example and watch for answer choices that overstate emotion.",
+    "passage": [
+      "職場における評価制度は、結果を数値化することで公平性を高めると考えられがちである。確かに、感覚的な判断だけに頼るよりも、一定の基準を示すことには意味がある。しかし、数値が示されているからといって、評価が直ちに納得を生むわけではない。",
+      "なぜなら、評価される側が求めているのは、単なる点数ではなく、その点数に至るまでの判断過程だからである。どの行動が評価され、どの点が不足していたのかが説明されなければ、数字は客観性を装った結論にすぎない。結果だけが提示される評価は、改善の手がかりを与えず、かえって不満を固定化してしまう。",
+      "評価制度を機能させるには、基準を作るだけでなく、その基準がどのように適用されたのかを伝える仕組みが欠かせない。評価とは人を分類するための作業ではなく、次の行動を具体化するための対話である。その点を見失えば、どれほど精密な制度であっても、信頼を支えるものにはならない。"
+    ],
+    "argumentMap": [
+      {
+        "label": "Common belief",
+        "content": "Numerical evaluation is often assumed to increase fairness."
+      },
+      {
+        "label": "Limit",
+        "content": "Numbers alone do not create acceptance or trust."
+      },
+      {
+        "label": "Reason",
+        "content": "People need the judgment process, not just the final score."
+      },
+      {
+        "label": "Conclusion",
+        "content": "Evaluation should become a dialogue that clarifies the next action."
+      }
+    ],
+    "discourseMarkers": [
+      {
+        "marker": "確かに",
+        "function": "partial acceptance",
+        "cue": "The author grants a limited benefit before narrowing the claim."
+      },
+      {
+        "marker": "しかし",
+        "function": "main contrast",
+        "cue": "The author's real position begins after this contrast."
+      },
+      {
+        "marker": "なぜなら",
+        "function": "reason",
+        "cue": "The passage explains why numbers are insufficient."
+      }
+    ],
+    "vocabulary": [
+      {
+        "expression": "数値化",
+        "reading": "すうちか",
+        "meaning": "quantification",
+        "note": "Useful for business, data, and policy texts."
+      },
+      {
+        "expression": "判断過程",
+        "reading": "はんだんかてい",
+        "meaning": "decision-making process",
+        "note": "Often contrasts with final outcome or result."
+      },
+      {
+        "expression": "固定化",
+        "reading": "こていか",
+        "meaning": "becoming fixed; entrenchment",
+        "note": "Here it describes dissatisfaction becoming harder to change."
+      }
+    ],
+    "traps": [
+      {
+        "label": "Example mistaken for claim",
+        "trap": "The author mainly wants companies to stop using numerical scores.",
+        "whyItFails": "The passage accepts that criteria and numbers can have value.",
+        "repair": "Look for the limited claim: numbers need explanation and dialogue."
+      },
+      {
+        "label": "Emotion overstatement",
+        "trap": "Workers reject evaluation because they dislike being judged.",
+        "whyItFails": "The stated problem is missing explanation, not rejection of evaluation itself.",
+        "repair": "Avoid answer choices that invent motivation not stated in the passage."
+      }
+    ],
+    "questions": [
+      {
+        "prompt": "筆者によれば、評価制度を機能させるために必要なことは何か。",
+        "choices": [
+          "評価の点数をできるだけ細かく設定すること。",
+          "評価される側が数字を受け入れるまで説明を控えること。",
+          "結果だけでなく、判断過程と次の行動を伝えること。",
+          "感情的な不満を避けるため、評価基準を公開しないこと。"
+        ],
+        "answerIndex": 2,
+        "explanation": "The final paragraph defines evaluation as dialogue for clarifying the next action."
+      }
+    ],
+    "paraphrases": [
+      {
+        "original": "数字は客観性を装った結論にすぎない。",
+        "paraphrase": "判断の理由が示されなければ、点数は中立に見えるだけの結果である。",
+        "note": "装った becomes 見えるだけ; 結論 becomes 結果."
+      },
+      {
+        "original": "評価とは人を分類するための作業ではなく、次の行動を具体化するための対話である。",
+        "paraphrase": "評価の目的は人を分けることではなく、改善に向けた行動を明確にすることにある。",
+        "note": "This preserves the not-A-but-B structure."
+      }
+    ],
+    "rereadPlan": [
+      {
+        "pass": "First pass",
+        "minutes": 4,
+        "goal": "Underline 確かに and しかし to locate the author's position."
+      },
+      {
+        "pass": "Second pass",
+        "minutes": 5,
+        "goal": "Separate accepted claim, rejected claim, and final conclusion."
+      },
+      {
+        "pass": "Final check",
+        "minutes": 3,
+        "goal": "Reject choices that say 'no numbers' or invent worker emotion."
+      }
+    ],
+    "summaryChallenge": "評価が信頼につながる条件を、判断過程という語を使って一文でまとめる。"
+  }
+]

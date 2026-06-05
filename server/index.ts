@@ -5,8 +5,9 @@ import { fileURLToPath } from "node:url";
 import { createServer as createViteServer } from "vite";
 import { evaluateKanaAnswer, recordKanaReview, selectKanaQuiz } from "../src/domain/kanaQuiz";
 import { buildDailySession, evaluateAnswer, getMemorySummary, recordReview } from "../src/domain/learningEngine";
+import { selectReadingLabPassage } from "../src/domain/readingLab";
 import { selectDailyWordPair } from "../src/domain/wordPair";
-import type { DailyWordPair, KanaQuizItem, LearnerMemory, StudyItem } from "../src/domain/types";
+import type { DailyWordPair, KanaQuizItem, LearnerMemory, ReadingLabPassage, StudyItem } from "../src/domain/types";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const rootDir = resolve(__dirname, "..");
@@ -15,6 +16,7 @@ const seedPath = resolve(dataDir, "seed-items.json");
 const memoryPath = resolve(dataDir, "learner-memory.json");
 const wordPairsPath = resolve(dataDir, "daily-word-pairs.json");
 const kanaQuizPath = resolve(dataDir, "kana-quiz-items.json");
+const readingLabPath = resolve(dataDir, "reading-lab-passages.json");
 const port = Number(process.env.PORT ?? 5173);
 const isProduction = process.env.NODE_ENV === "production";
 
@@ -80,6 +82,12 @@ app.get("/api/kana-quiz", (_request, response) => {
   });
 });
 
+app.get("/api/reading-lab", (_request, response) => {
+  response.json({
+    passage: selectReadingLabPassage(loadReadingLabPassages(), new Date())
+  });
+});
+
 app.post("/api/kana-reviews", (request, response) => {
   const { itemId, answer } = request.body as { itemId?: string; answer?: string };
   if (!itemId || typeof answer !== "string") {
@@ -133,6 +141,10 @@ function loadWordPairs(): DailyWordPair[] {
 
 function loadKanaQuizItems(): KanaQuizItem[] {
   return JSON.parse(readFileSync(kanaQuizPath, "utf8")) as KanaQuizItem[];
+}
+
+function loadReadingLabPassages(): ReadingLabPassage[] {
+  return JSON.parse(readFileSync(readingLabPath, "utf8")) as ReadingLabPassage[];
 }
 
 function loadMemory(): LearnerMemory {

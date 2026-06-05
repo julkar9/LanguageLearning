@@ -33,6 +33,7 @@ import type {
   KanaQuizItem,
   LearnerMemory,
   MemorySummary,
+  ReadingLabPassage,
   StudyCategory,
   StudyItem
 } from "./domain/types";
@@ -53,6 +54,10 @@ interface KanaQuizResponse {
   feedback?: KanaFeedback;
 }
 
+interface ReadingLabResponse {
+  passage: ReadingLabPassage;
+}
+
 const categoryLabels: Record<StudyCategory, string> = {
   vocabulary: "Vocabulary",
   kanji: "Kanji",
@@ -60,12 +65,13 @@ const categoryLabels: Record<StudyCategory, string> = {
   reading: "Reading"
 };
 
-type CockpitPanel = "drill" | "kana" | "word" | "memory";
+type CockpitPanel = "drill" | "kana" | "reading" | "word" | "memory";
 type WordPairPanel = "english" | "japanese" | "kanji" | "examples";
 
 const cockpitTabs: Array<{ id: CockpitPanel; label: string; description: string }> = [
   { id: "drill", label: "Daily Drill", description: "N1 review queue" },
   { id: "kana", label: "Kana", description: "Keyboard practice" },
+  { id: "reading", label: "Reading Lab", description: "Argument training" },
   { id: "word", label: "Word Pair", description: "Advanced language" },
   { id: "memory", label: "Memory", description: "Weak points" }
 ];
@@ -195,6 +201,7 @@ function assignForwardedRef<T>(ref: Ref<T>, value: T | null) {
 function App() {
   const [payload, setPayload] = useState<SessionResponse | null>(null);
   const [wordPair, setWordPair] = useState<DailyWordPair | null>(null);
+  const [readingLab, setReadingLab] = useState<ReadingLabPassage | null>(null);
   const [kanaItems, setKanaItems] = useState<KanaQuizItem[]>([]);
   const [kanaIndex, setKanaIndex] = useState(0);
   const [kanaAnswer, setKanaAnswer] = useState("");
@@ -247,6 +254,7 @@ function App() {
   const tabStatus: Record<CockpitPanel, { detail: string; value: string }> = {
     drill: { value: progress, detail: payload?.session.focusNote ?? "Today's queue" },
     kana: { value: kanaItems.length > 0 ? `${kanaIndex + 1} / ${kanaItems.length}` : "0 / 0", detail: "Keyboard practice" },
+    reading: { value: readingLab ? `${readingLab.estimatedMinutes} min` : "Loading", detail: readingLab?.theme ?? "Argument training" },
     word: { value: wordPair?.title ?? "Loading", detail: "Advanced language" },
     memory: { value: `${payload?.summary.accuracy ?? 0}%`, detail: `${payload?.summary.dueCount ?? 0} due · ${weakList.length} weak` }
   };
@@ -255,10 +263,11 @@ function App() {
     setLoading(true);
     setError(null);
     try {
-      const [sessionResponse, wordPairResponse, kanaQuizResponse] = await Promise.all([
+      const [sessionResponse, wordPairResponse, kanaQuizResponse, readingLabResponse] = await Promise.all([
         fetch("/api/session"),
         fetch("/api/word-pair"),
-        fetch("/api/kana-quiz")
+        fetch("/api/kana-quiz"),
+        fetch("/api/reading-lab")
       ]);
       if (!sessionResponse.ok) {
         throw new Error("Could not load today's drill.");
@@ -269,11 +278,16 @@ function App() {
       if (!kanaQuizResponse.ok) {
         throw new Error("Could not load kana typing quiz.");
       }
+      if (!readingLabResponse.ok) {
+        throw new Error("Could not load N1 reading lab.");
+      }
       const nextPayload = (await sessionResponse.json()) as SessionResponse;
       const nextWordPair = (await wordPairResponse.json()) as WordPairResponse;
       const nextKanaQuiz = (await kanaQuizResponse.json()) as KanaQuizResponse;
+      const nextReadingLab = (await readingLabResponse.json()) as ReadingLabResponse;
       setPayload(nextPayload);
       setWordPair(nextWordPair.wordPair);
+      setReadingLab(nextReadingLab.passage);
       setKanaItems(nextKanaQuiz.items);
       setKanaIndex(0);
       setKanaAnswer("");
@@ -446,6 +460,8 @@ function App() {
             ) : null}
 
             {activePanel === "word" ? <DailyWordPairPanel wordPair={wordPair} /> : null}
+
+            {activePanel === "reading" ? <ReadingLabPanel passage={readingLab} /> : null}
 
             {activePanel === "memory" ? <MemoryPanel payload={payload} weakList={weakList} /> : null}
           </section>
@@ -642,6 +658,155 @@ function KanaTypingPanel({
       ) : (
         <div className="empty-state">No kana quiz items are available.</div>
       )}
+    </section>
+  );
+}
+
+function ReadingLabPanel({ passage }: { passage: ReadingLabPassage | null }) {
+  const [showAnswer, setShowAnswer] = useState(false);
+  const question = passage?.questions[0] ?? null;
+
+  if (!passage) {
+    return (
+      <section className="reading-panel" aria-label="N1 reading lab">
+        <div className="empty-state">No reading lab passage is available.</div>
+      </section>
+    );
+  }
+
+  return (
+    <section className="reading-panel" aria-label="N1 reading lab">
+      <div className="lesson-header">
+        <div>
+          <p className="eyebrow">Expert reading practice</p>
+          <h2>N1 Reading Lab</h2>
+          <p className="panel-subtitle">{passage.focus}</p>
+        </div>
+        <span className="lesson-title">{passage.estimatedMinutes} min · {passage.difficulty}</span>
+      </div>
+
+      <div className="reading-layout">
+        <article className="reading-passage">
+          <div className="block-title">
+            <BookOpen size={20} aria-hidden="true" />
+            <h3>{passage.title}</h3>
+          </div>
+          <p className="reading-theme">{passage.theme}</p>
+          <div className="passage-text">
+            {passage.passage.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
+          </div>
+        </article>
+
+        <div className="reading-analysis">
+          <section className="reading-section">
+            <h3>Argument map</h3>
+            <ol className="argument-map">
+              {passage.argumentMap.map((point) => (
+                <li key={`${point.label}-${point.content}`}>
+                  <strong>{point.label}</strong>
+                  <span>{point.content}</span>
+                </li>
+              ))}
+            </ol>
+          </section>
+
+          <section className="reading-section">
+            <h3>Discourse markers</h3>
+            <div className="marker-grid">
+              {passage.discourseMarkers.map((marker) => (
+                <div key={`${marker.marker}-${marker.function}`}>
+                  <strong>{marker.marker}</strong>
+                  <span>{marker.function}</span>
+                  <p>{marker.cue}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <section className="reading-section">
+            <h3>Trap analysis</h3>
+            <div className="trap-list">
+              {passage.traps.map((trap) => (
+                <article key={trap.label}>
+                  <strong>{trap.label}</strong>
+                  <p>{trap.trap}</p>
+                  <span>{trap.whyItFails}</span>
+                  <em>{trap.repair}</em>
+                </article>
+              ))}
+            </div>
+          </section>
+
+          {question ? (
+            <section className="reading-section">
+              <h3>N1 question</h3>
+              <p className="question-prompt">{question.prompt}</p>
+              <ol className="choice-list">
+                {question.choices.map((choice, index) => (
+                  <li className={showAnswer && index === question.answerIndex ? "is-correct-choice" : ""} key={choice}>
+                    <span>{index + 1}</span>
+                    {choice}
+                  </li>
+                ))}
+              </ol>
+              <DwellButton className="reveal-button" type="button" onClick={() => setShowAnswer(true)} disabled={showAnswer}>
+                <Target size={17} aria-hidden="true" />
+                Reveal reading answer
+              </DwellButton>
+              {showAnswer ? (
+                <div className="reading-answer">
+                  <strong>Correct: {question.answerIndex + 1}</strong>
+                  <p>{question.explanation}</p>
+                </div>
+              ) : null}
+            </section>
+          ) : null}
+
+          <section className="reading-section">
+            <h3>Paraphrase recognition</h3>
+            <div className="paraphrase-list">
+              {passage.paraphrases.map((paraphrase) => (
+                <article key={paraphrase.original}>
+                  <p>{paraphrase.original}</p>
+                  <span>{paraphrase.paraphrase}</span>
+                  <em>{paraphrase.note}</em>
+                </article>
+              ))}
+            </div>
+          </section>
+
+          <section className="reading-section">
+            <h3>Precision vocabulary</h3>
+            <div className="vocab-grid">
+              {passage.vocabulary.map((item) => (
+                <div key={item.expression}>
+                  <strong>{item.expression}</strong>
+                  <span>{item.reading} · {item.meaning}</span>
+                  <p>{item.note}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <section className="reading-section">
+            <h3>Reread cycle</h3>
+            <ol className="reread-list">
+              {passage.rereadPlan.map((step) => (
+                <li key={step.pass}>
+                  <strong>{step.pass} · {step.minutes} min</strong>
+                  <span>{step.goal}</span>
+                </li>
+              ))}
+            </ol>
+            <div className="challenge">
+              <PenLine size={17} aria-hidden="true" />
+              <span>{passage.summaryChallenge}</span>
+            </div>
+          </section>
+        </div>
+      </div>
     </section>
   );
 }

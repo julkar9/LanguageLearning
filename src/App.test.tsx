@@ -117,6 +117,59 @@ const kanaQuizPayload = {
   ]
 };
 
+const readingLabPayload = {
+  passage: {
+    id: "policy-transparency",
+    title: "制度の透明性と説明責任",
+    theme: "Policy critique",
+    difficulty: "N1",
+    estimatedMinutes: 14,
+    focus: "Track contrast, concession, and the author's final judgment.",
+    passage: [
+      "新しい制度が導入されるたびに、利用者には少なからぬ負担が生じる。",
+      "とはいえ、負担そのものが問題なのではない。目的と判断基準が見えないまま協力を求められることが、不信感を生むのである。"
+    ],
+    argumentMap: [
+      { label: "Problem", content: "Users resist rules when the reason is invisible." },
+      { label: "Conclusion", content: "Transparency must be designed before enforcement." }
+    ],
+    discourseMarkers: [
+      { marker: "とはいえ", function: "concession", cue: "Limits the previous claim before the real argument." }
+    ],
+    vocabulary: [
+      { expression: "説明責任", reading: "せつめいせきにん", meaning: "accountability", note: "Common in policy and business critique." }
+    ],
+    traps: [
+      {
+        label: "Too extreme",
+        trap: "The author rejects all new systems.",
+        whyItFails: "The passage criticizes unexplained systems, not systems themselves.",
+        repair: "Keep the contrast between burden and unclear purpose."
+      }
+    ],
+    questions: [
+      {
+        prompt: "筆者の主張に最も近いものはどれか。",
+        choices: ["制度の導入は避けるべきだ。", "説明がない負担は不信感を生む。", "利用者は常に便利さを優先する。"],
+        answerIndex: 1,
+        explanation: "The author says unexplained burden creates distrust."
+      }
+    ],
+    paraphrases: [
+      {
+        original: "目的と判断基準が見えないまま協力を求められる。",
+        paraphrase: "理由が共有されなければ、協力は納得につながらない。",
+        note: "The paraphrase keeps the logic while replacing concrete nouns."
+      }
+    ],
+    rereadPlan: [
+      { pass: "First pass", minutes: 4, goal: "Mark contrast and concession signals." },
+      { pass: "Second pass", minutes: 5, goal: "Match each paragraph to the argument map." }
+    ],
+    summaryChallenge: "Use one Japanese sentence to explain why transparency matters."
+  }
+};
+
 describe("App", () => {
   beforeEach(() => {
     vi.restoreAllMocks();
@@ -138,6 +191,9 @@ describe("App", () => {
       }
       if (endpoint === "/api/kana-quiz") {
         return Promise.resolve({ ok: true, json: async () => kanaQuizPayload });
+      }
+      if (endpoint === "/api/reading-lab") {
+        return Promise.resolve({ ok: true, json: async () => readingLabPayload });
       }
       if (endpoint === "/api/reviews") {
         return Promise.resolve({
@@ -189,6 +245,9 @@ describe("App", () => {
       }
       if (endpoint === "/api/kana-quiz") {
         return Promise.resolve({ ok: true, json: async () => kanaQuizPayload });
+      }
+      if (endpoint === "/api/reading-lab") {
+        return Promise.resolve({ ok: true, json: async () => readingLabPayload });
       }
       if (endpoint === "/api/reviews") {
         return Promise.resolve({
@@ -253,6 +312,48 @@ describe("App", () => {
     expect(screen.getByText(/Before signing/)).toBeInTheDocument();
   });
 
+  it("switches to the N1 reading lab with argument, trap, and reread training", async () => {
+    const fetchMock = vi.fn((url: string | URL | Request) => {
+      const endpoint = url.toString();
+      if (endpoint === "/api/session") {
+        return Promise.resolve({ ok: true, json: async () => sessionPayload });
+      }
+      if (endpoint === "/api/word-pair") {
+        return Promise.resolve({ ok: true, json: async () => wordPairPayload });
+      }
+      if (endpoint === "/api/kana-quiz") {
+        return Promise.resolve({ ok: true, json: async () => kanaQuizPayload });
+      }
+      if (endpoint === "/api/reading-lab") {
+        return Promise.resolve({ ok: true, json: async () => readingLabPayload });
+      }
+      throw new Error(`Unexpected fetch: ${endpoint}`);
+    });
+    vi.stubGlobal("fetch", fetchMock);
+
+    render(<App />);
+
+    await userEvent.click(await screen.findByRole("tab", { name: /reading lab/i }));
+
+    expect(await screen.findByRole("heading", { name: /n1 reading lab/i })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /制度の透明性と説明責任/i })).toBeInTheDocument();
+    expect(screen.getByText(/新しい制度が導入されるたびに/)).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /argument map/i })).toBeInTheDocument();
+    expect(screen.getByText(/Transparency must be designed before enforcement/i)).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /trap analysis/i })).toBeInTheDocument();
+    expect(screen.getByText(/The author rejects all new systems/i)).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /paraphrase recognition/i })).toBeInTheDocument();
+    expect(screen.getByText(/理由が共有されなければ/)).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /reread cycle/i })).toBeInTheDocument();
+    expect(screen.getByText(/Second pass · 5 min/i)).toBeInTheDocument();
+    expect(screen.queryByText(/Correct: 2/)).not.toBeInTheDocument();
+
+    await userEvent.click(screen.getByRole("button", { name: /reveal reading answer/i }));
+
+    expect(screen.getByText(/Correct: 2/)).toBeInTheDocument();
+    expect(screen.getByText(/unexplained burden creates distrust/i)).toBeInTheDocument();
+  });
+
   it("switches to the daily word pair cockpit tab and its lesson sub-tabs", async () => {
     const fetchMock = vi.fn((url: string | URL | Request) => {
       const endpoint = url.toString();
@@ -264,6 +365,9 @@ describe("App", () => {
       }
       if (endpoint === "/api/kana-quiz") {
         return Promise.resolve({ ok: true, json: async () => kanaQuizPayload });
+      }
+      if (endpoint === "/api/reading-lab") {
+        return Promise.resolve({ ok: true, json: async () => readingLabPayload });
       }
       throw new Error(`Unexpected fetch: ${endpoint}`);
     });
@@ -307,6 +411,9 @@ describe("App", () => {
       }
       if (endpoint === "/api/kana-quiz") {
         return Promise.resolve({ ok: true, json: async () => kanaQuizPayload });
+      }
+      if (endpoint === "/api/reading-lab") {
+        return Promise.resolve({ ok: true, json: async () => readingLabPayload });
       }
       throw new Error(`Unexpected fetch: ${endpoint}`);
     });
@@ -354,6 +461,9 @@ describe("App", () => {
       }
       if (endpoint === "/api/kana-quiz") {
         return Promise.resolve({ ok: true, json: async () => kanaQuizPayload });
+      }
+      if (endpoint === "/api/reading-lab") {
+        return Promise.resolve({ ok: true, json: async () => readingLabPayload });
       }
       if (endpoint === "/api/kana-reviews") {
         return Promise.resolve({
@@ -426,6 +536,9 @@ describe("App", () => {
       }
       if (endpoint === "/api/kana-quiz") {
         return Promise.resolve({ ok: true, json: async () => kanaQuizPayload });
+      }
+      if (endpoint === "/api/reading-lab") {
+        return Promise.resolve({ ok: true, json: async () => readingLabPayload });
       }
       throw new Error(`Unexpected fetch: ${endpoint}`);
     });

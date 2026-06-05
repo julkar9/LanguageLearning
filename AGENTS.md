@@ -10,6 +10,7 @@ These instructions apply to the local LanguageLearning app in `/Users/julkarnine
 - Preserve the existing study surfaces unless the user explicitly asks to remove them: N1 Daily Drill, Kana Typing Quiz, memory tracking, mistake tracking, and Daily Word Pair.
 - Prefer small, testable React, TypeScript, CSS, and data changes over broad rewrites.
 - Do not delete or reset learner memory.
+- For brainstorm-driven implementations, record the chosen idea and the main rejected alternatives in `docs/superpowers/specs/` or `docs/superpowers/plans/` so future work can build from the decision.
 
 ## Verification
 
