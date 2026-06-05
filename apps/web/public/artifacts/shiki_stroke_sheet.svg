@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900">
+  <rect width="1400" height="900" fill="#fbfaf7"/>
+  <text x="60" y="82" font-family="Hiragino Sans, Noto Sans CJK JP, sans-serif" font-size="46" font-weight="700" fill="#1f2933">識 stroke-order study sheet</text>
+  <text x="60" y="125" font-family="Hiragino Sans, Noto Sans CJK JP, sans-serif" font-size="26" fill="#475467">19 strokes | radical: 言 | components: 言 + 戠 (音 + 戈)</text>
+
+  <rect x="65" y="165" width="520" height="520" fill="#ffffff" stroke="#d0d5dd" stroke-width="4"/>
+  <line x1="325" y1="165" x2="325" y2="685" stroke="#e4e7ec" stroke-width="3"/>
+  <line x1="65" y1="425" x2="585" y2="425" stroke="#e4e7ec" stroke-width="3"/>
+  <line x1="65" y1="165" x2="585" y2="685" stroke="#eef1f4" stroke-width="2"/>
+  <line x1="585" y1="165" x2="65" y2="685" stroke="#eef1f4" stroke-width="2"/>
+  <text x="325" y="570" text-anchor="middle" font-family="Hiragino Sans, Noto Sans CJK JP, serif" font-size="360" fill="#111827">識</text>
+  <text x="325" y="735" text-anchor="middle" font-family="Hiragino Sans, Noto Sans CJK JP, sans-serif" font-size="26" fill="#475467">Model shape: write left side first, then right side.</text>
+
+  <g font-family="Hiragino Sans, Noto Sans CJK JP, sans-serif">
+    <rect x="650" y="175" width="650" height="92" rx="12" fill="#ecfdf3" stroke="#98a2b3"/>
+    <text x="682" y="213" font-size="28" font-weight="700" fill="#101828">1-7: 言</text>
+    <text x="682" y="247" font-size="23" fill="#344054">dot, top line, two short marks, then 口 box.</text>
+
+    <rect x="650" y="292" width="650" height="92" rx="12" fill="#eff8ff" stroke="#98a2b3"/>
+    <text x="682" y="330" font-size="28" font-weight="700" fill="#101828">8-16: 音</text>
+    <text x="682" y="364" font-size="23" fill="#344054">build 立 on top, then 日 underneath.</text>
+
+    <rect x="650" y="409" width="650" height="92" rx="12" fill="#fff7ed" stroke="#98a2b3"/>
+    <text x="682" y="447" font-size="28" font-weight="700" fill="#101828">17-19: 戈</text>
+    <text x="682" y="481" font-size="23" fill="#344054">finish with the long diagonal and small cuts/dot.</text>
+
+    <rect x="650" y="540" width="650" height="178" rx="12" fill="#ffffff" stroke="#d0d5dd"/>
+    <text x="682" y="582" font-size="27" font-weight="700" fill="#101828">Memory cue</text>
+    <text x="682" y="624" font-size="24" fill="#344054">言: words</text>
+    <text x="682" y="662" font-size="24" fill="#344054">音: sound</text>
+    <text x="682" y="700" font-size="24" fill="#344054">戈: halberd</text>
+
+    <text x="60" y="825" font-size="24" fill="#667085">Source basis: KanjiVG/JapanDict/Jitenon identify 識 as 19 strokes with 言 radical and these components.</text>
+  </g>
+</svg>

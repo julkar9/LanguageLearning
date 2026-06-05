@@ -1,0 +1,20 @@
+services:
+  postgres:
+    image: postgres:15
+    container_name: language-learning-postgres
+    ports:
+      - "5175:5432"
+    environment:
+      POSTGRES_USER: language_learning
+      POSTGRES_PASSWORD: language_learning
+      POSTGRES_DB: language_learning
+    volumes:
+      - language_learning_postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U language_learning -d language_learning"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  language_learning_postgres_data:

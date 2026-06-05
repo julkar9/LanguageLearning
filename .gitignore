@@ -1,7 +1,15 @@
 node_modules/
 dist/
+.next/
+apps/*/.next/
+apps/*/dist/
+packages/*/dist/
 .DS_Store
 .superpowers/
 .playwright-cli/
 coverage/
 npm-debug.log*
+.env
+.env.local
+pnpm-debug.log*
+*.tsbuildinfo
