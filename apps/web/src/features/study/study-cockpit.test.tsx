@@ -71,6 +71,25 @@ describe("StudyCockpit interactions", () => {
       expect(screen.getByLabelText("Your answer")).toHaveFocus();
     });
   });
+
+  it("adds kanji memory details below a missed-answer review focus", async () => {
+    renderWithQueryClient(<StudyCockpit />);
+
+    const input = await screen.findByLabelText("Your answer");
+    await userEvent.type(input, "unagashi");
+    await userEvent.keyboard("{Enter}");
+
+    expect(await screen.findByText("Needs review")).toBeInTheDocument();
+    expect(screen.getByText("甚だしい · はなはだしい")).toBeInTheDocument();
+    expect(screen.getByText("Kanji memory")).toBeInTheDocument();
+    expect(screen.getByText("甚 · 9 strokes")).toBeInTheDocument();
+    expect(screen.getByText(/甘 means sweet/)).toBeInTheDocument();
+    expect(screen.getByText(/Stroke 1:/)).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /watch stroke\/story videos/i })).toHaveAttribute(
+      "href",
+      expect.stringContaining("youtube.com/results")
+    );
+  });
 });
 
 function renderWithQueryClient(children: ReactNode) {
@@ -94,15 +113,18 @@ function mockStudyFetch(input: RequestInfo | URL, init?: RequestInit) {
   }
 
   if (url.endsWith("/study/reviews") && method === "POST") {
+    const body = requestBody(init);
+    const correct = body.answer === "severe";
     return Promise.resolve(
       jsonResponse({
         ...sessionBody(),
         feedback: {
-          correct: true,
-          normalizedAnswer: "severe",
+          correct,
+          normalizedAnswer: body.answer,
           expected: "severe, はなはだしい",
           explanation: "Used for an extreme degree.",
-          keyboardTip: "Enter advances after feedback."
+          keyboardTip: "Enter advances after feedback.",
+          ...(correct ? {} : { reviewFocus: reviewFocusBody() })
         }
       })
     );
@@ -199,6 +221,30 @@ function wordPairBody() {
   };
 }
 
+function reviewFocusBody() {
+  return {
+    word: "甚だしい",
+    reading: "はなはだしい",
+    meaning: "severe",
+    simpleExplanation: "甚だしい describes a degree that is far beyond normal.",
+    examples: [{ japanese: "被害は甚だしい。", reading: "ひがいははなはだしい。", english: "The damage is severe." }],
+    extraExamples: [{ japanese: "差が甚だしい", reading: "さがはなはだしい", english: "the gap is extreme" }],
+    microStory: "An egregious delay revealed a 甚だしい gap.",
+    kanjiFocus: {
+      kanji: "甚",
+      radical: "甘",
+      components: ["甘", "一", "儿"],
+      strokeCount: 9,
+      strokeSteps: [
+        "Stroke 1: draw the long top horizontal line.",
+        "Strokes 2-3: add the vertical frame."
+      ],
+      memoryStory: "甘 means sweet, but 甚 pushes the degree too far.",
+      sourceLinks: ["https://jitenon.com/kanji/%E7%94%9A"]
+    }
+  };
+}
+
 function readingLabBody() {
   return {
     id: "reading-1",
@@ -243,6 +289,13 @@ function requestUrl(input: RequestInfo | URL): string {
     return input.toString();
   }
   return input.url;
+}
+
+function requestBody(init: RequestInit | undefined): { answer?: string } {
+  if (typeof init?.body === "string") {
+    return JSON.parse(init.body) as { answer?: string };
+  }
+  return {};
 }
 
 function wait(ms: number) {

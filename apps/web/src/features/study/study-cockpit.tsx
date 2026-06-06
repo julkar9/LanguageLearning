@@ -21,6 +21,7 @@ import {
   Languages,
   Loader2,
   PenLine,
+  PlayCircle,
   Send,
   Sparkles,
   Target,
@@ -32,6 +33,7 @@ import { tsr } from "@/lib/api";
 
 type CockpitPanel = "drill" | "kana" | "reading" | "word" | "memory";
 type WordPairPanel = "english" | "japanese" | "kanji" | "examples";
+type ReviewKanjiFocus = NonNullable<AnswerFeedback["reviewFocus"]>["kanjiFocus"];
 
 const categoryLabels: Record<StudyCategory, string> = {
   vocabulary: "Vocabulary",
@@ -745,6 +747,7 @@ function FeedbackPanel({ feedback, finished, onNext }: { feedback: AnswerFeedbac
           <p className="mt-1 text-muted-foreground">{feedback.reviewFocus.microStory}</p>
         </div>
       ) : null}
+      {feedback.reviewFocus ? <KanjiMemoryBlock kanjiFocus={feedback.reviewFocus.kanjiFocus} /> : null}
       <Button className="mt-4" type="button" onClick={onNext} data-study-next-action="drill">
         {finished ? "Refresh drill" : "Next item"}
       </Button>
@@ -779,6 +782,73 @@ function LessonBlock({ children, icon, title }: { children: ReactNode; icon: Rea
       {children}
     </article>
   );
+}
+
+function KanjiMemoryBlock({ kanjiFocus }: { kanjiFocus: ReviewKanjiFocus }) {
+  const youtubeUrl = `https://www.youtube.com/results?search_query=${encodeURIComponent(`${kanjiFocus.kanji} kanji stroke order story`)}`;
+
+  return (
+    <section className="mt-4 rounded-md border bg-background p-4">
+      <div className="mb-3 flex flex-wrap items-center justify-between gap-3">
+        <div>
+          <h3 className="text-sm font-semibold uppercase text-muted-foreground">Kanji memory</h3>
+          <p className="mt-1 text-lg font-semibold">
+            {kanjiFocus.kanji} · {kanjiFocus.strokeCount} strokes
+          </p>
+        </div>
+        <a className="inline-flex items-center gap-2 rounded-md border bg-muted px-3 py-2 text-sm font-semibold hover:bg-card" href={youtubeUrl} target="_blank" rel="noreferrer">
+          <PlayCircle className="h-4 w-4" aria-hidden="true" />
+          Watch stroke/story videos
+        </a>
+      </div>
+
+      <div className="grid gap-4 md:grid-cols-[9rem_1fr]">
+        <div className="flex aspect-square items-center justify-center rounded-md bg-muted text-7xl font-bold">{kanjiFocus.kanji}</div>
+        <div className="space-y-3">
+          <p className="text-sm text-muted-foreground">
+            Radical: {kanjiFocus.radical} · Components: {kanjiFocus.components.join(" + ")}
+          </p>
+          {kanjiFocus.strokeOrderImagePath ? (
+            <img className="max-h-56 rounded-md border bg-card object-contain p-2" src={kanjiFocus.strokeOrderImagePath} alt={`Stroke order for ${kanjiFocus.kanji}`} />
+          ) : null}
+          <div className="rounded-md bg-muted p-3 text-sm">{kanjiFocus.memoryStory}</div>
+          <ol className="list-decimal space-y-1 pl-5 text-sm">
+            {kanjiFocus.strokeSteps.map((step) => (
+              <li key={step}>{step}</li>
+            ))}
+          </ol>
+          <div className="flex flex-wrap gap-2">
+            {kanjiFocus.sourceLinks.map((sourceLink, index) => (
+              <a className="rounded-md border px-2 py-1 text-xs font-semibold hover:bg-muted" href={sourceLink} key={sourceLink} target="_blank" rel="noreferrer">
+                {sourceLabel(sourceLink, index)}
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function sourceLabel(sourceLink: string, index: number) {
+  try {
+    const host = new URL(sourceLink).hostname.replace(/^www\./, "");
+    if (host.includes("jitenon")) {
+      return "Jitenon";
+    }
+    if (host.includes("japandict")) {
+      return "JapanDict";
+    }
+    if (host.includes("kanjivg")) {
+      return "KanjiVG";
+    }
+    if (host.includes("githubusercontent")) {
+      return "Stroke diagram";
+    }
+    return host;
+  } catch {
+    return `Source ${index + 1}`;
+  }
 }
 
 function PanelSection({ children, title }: { children: ReactNode; title: string }) {
