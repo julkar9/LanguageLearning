@@ -33,6 +33,7 @@ import { tsr } from "@/lib/api";
 
 type CockpitPanel = "drill" | "kana" | "reading" | "word" | "memory";
 type WordPairPanel = "english" | "japanese" | "kanji" | "examples";
+type DrillReviewFocusWithKanji = NonNullable<AnswerFeedback["reviewFocus"]>;
 type ReviewKanjiFocus = NonNullable<AnswerFeedback["reviewFocus"]>["kanjiFocus"];
 
 const categoryLabels: Record<StudyCategory, string> = {
@@ -748,6 +749,7 @@ function FeedbackPanel({ feedback, finished, onNext }: { feedback: AnswerFeedbac
         </div>
       ) : null}
       {feedback.reviewFocus ? <KanjiMemoryBlock kanjiFocus={feedback.reviewFocus.kanjiFocus} /> : null}
+      {feedback.reviewFocus ? <N1PracticeBlock reviewFocus={feedback.reviewFocus} /> : null}
       <Button className="mt-4" type="button" onClick={onNext} data-study-next-action="drill">
         {finished ? "Refresh drill" : "Next item"}
       </Button>
@@ -849,6 +851,84 @@ function sourceLabel(sourceLink: string, index: number) {
   } catch {
     return `Source ${index + 1}`;
   }
+}
+
+function N1PracticeBlock({ reviewFocus }: { reviewFocus: DrillReviewFocusWithKanji }) {
+  const readingExamples = reviewFocus.examples.length > 0 ? reviewFocus.examples : reviewFocus.extraExamples;
+  const paragraphExamples = readingExamples.slice(0, 3);
+  const vocabularyExamples = reviewFocus.extraExamples.length > 0 ? reviewFocus.extraExamples : reviewFocus.examples;
+
+  return (
+    <section className="mt-4 rounded-md border bg-background p-4">
+      <div className="mb-3">
+        <h3 className="text-sm font-semibold uppercase text-muted-foreground">N1 practice</h3>
+        <p className="mt-1 text-lg font-semibold">
+          Reading, vocabulary, and grammar with {reviewFocus.kanjiFocus.kanji}
+        </p>
+      </div>
+
+      <div className="grid gap-3 lg:grid-cols-[1.15fr_0.85fr]">
+        <div className="space-y-3">
+          <PracticeSection title="Japanese paragraph">
+            <p className="text-base leading-7">{paragraphExamples.map((example) => example.japanese).join(" ")}</p>
+          </PracticeSection>
+          <PracticeSection title="English translation">
+            <p className="text-sm leading-6">{paragraphExamples.map((example) => example.english).join(" ")}</p>
+          </PracticeSection>
+        </div>
+
+        <div className="space-y-3">
+          <PracticeSection title="Reading support">
+            <ul className="space-y-1 text-sm">
+              {paragraphExamples.map((example) => (
+                <li key={`${example.japanese}-${example.reading}`}>
+                  <strong>{example.japanese}</strong>
+                  <span className="block text-muted-foreground">{example.reading || reviewFocus.reading}</span>
+                </li>
+              ))}
+            </ul>
+          </PracticeSection>
+          <PracticeSection title="Grammar / usage">
+            <p className="text-sm leading-6">{usageCue(reviewFocus.word)}</p>
+          </PracticeSection>
+        </div>
+      </div>
+
+      <PracticeSection title="Vocabulary in context" className="mt-3">
+        <div className="grid gap-2 sm:grid-cols-2">
+          {vocabularyExamples.slice(0, 4).map((example) => (
+            <div className="rounded-md bg-muted p-3 text-sm" key={`${example.japanese}-${example.english}`}>
+              <strong>{example.japanese}</strong>
+              <p className="text-muted-foreground">{example.reading || reviewFocus.reading}</p>
+              <p>{example.english}</p>
+            </div>
+          ))}
+        </div>
+      </PracticeSection>
+    </section>
+  );
+}
+
+function PracticeSection({ children, className = "", title }: { children: ReactNode; className?: string; title: string }) {
+  return (
+    <section className={`rounded-md bg-muted p-3 ${className}`}>
+      <h4 className="mb-2 text-xs font-semibold uppercase text-muted-foreground">{title}</h4>
+      {children}
+    </section>
+  );
+}
+
+function usageCue(word: string) {
+  if (word.endsWith("しい")) {
+    return `${word} is an i-adjective. In N1 reading, watch for it before a noun, after が/は, or in the adverb form ending in しく when the sentence describes degree, criticism, damage, gap, or severity.`;
+  }
+  if (word.endsWith("する")) {
+    return `${word} works as a suru-verb. In N1 reading, check what object or abstract issue is being acted on, then connect it to the sentence's cause or result.`;
+  }
+  if (word.endsWith("す")) {
+    return `${word} is a verb form. In N1 reading, identify who or what causes the action, then check the phrase after を, に, or が to see the target of that action.`;
+  }
+  return `${word} is likely to appear inside formal N1 vocabulary. Check the surrounding particles and modifiers first, then connect the word to the author's claim, contrast, or conclusion.`;
 }
 
 function PanelSection({ children, title }: { children: ReactNode; title: string }) {

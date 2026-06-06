@@ -90,6 +90,26 @@ describe("StudyCockpit interactions", () => {
       expect.stringContaining("youtube.com/results")
     );
   });
+
+  it("adds N1 reading, vocabulary, and grammar practice for the missed kanji", async () => {
+    renderWithQueryClient(<StudyCockpit />);
+
+    const input = await screen.findByLabelText("Your answer");
+    await userEvent.type(input, "unagashi");
+    await userEvent.keyboard("{Enter}");
+
+    expect(await screen.findByText("N1 practice")).toBeInTheDocument();
+    expect(screen.getByText("Japanese paragraph")).toBeInTheDocument();
+    expect(screen.getAllByText(/被害は甚だしい。/).length).toBeGreaterThan(1);
+    expect(screen.getByText("Reading support")).toBeInTheDocument();
+    expect(screen.getByText("ひがいははなはだしい。")).toBeInTheDocument();
+    expect(screen.getByText("English translation")).toBeInTheDocument();
+    expect(screen.getAllByText(/The damage is severe./).length).toBeGreaterThan(1);
+    expect(screen.getByText("Vocabulary in context")).toBeInTheDocument();
+    expect(screen.getByText("差が甚だしい")).toBeInTheDocument();
+    expect(screen.getByText("Grammar / usage")).toBeInTheDocument();
+    expect(screen.getByText(/i-adjective/)).toBeInTheDocument();
+  });
 });
 
 function renderWithQueryClient(children: ReactNode) {
