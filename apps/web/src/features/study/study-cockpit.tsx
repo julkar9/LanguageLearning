@@ -27,7 +27,7 @@ import {
   XCircle
 } from "lucide-react";
 import type { FormEvent, ReactNode, RefObject } from "react";
-import { useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { tsr } from "@/lib/api";
 
 type CockpitPanel = "drill" | "kana" | "reading" | "word" | "memory";
@@ -56,6 +56,8 @@ const wordPairTabs: Array<{ id: WordPairPanel; label: string }> = [
 ];
 
 const categoryMeterOrder: StudyCategory[] = ["vocabulary", "kanji", "grammar", "reading"];
+const dwellActivationMs = 850;
+const dwellMoveTolerancePx = 6;
 
 export function StudyCockpit() {
   const queryClient = useQueryClient();
@@ -66,6 +68,7 @@ export function StudyCockpit() {
   const [kanaIndex, setKanaIndex] = useState(0);
   const [kanaAnswer, setKanaAnswer] = useState("");
   const [kanaFeedback, setKanaFeedback] = useState<KanaFeedback | null>(null);
+  const cockpitRef = useRef<HTMLElement>(null);
   const answerInputRef = useRef<HTMLInputElement>(null);
   const kanaInputRef = useRef<HTMLInputElement>(null);
 
@@ -106,6 +109,8 @@ export function StudyCockpit() {
   const isLoading = sessionQuery.isPending || wordPairQuery.isPending || kanaQuery.isPending || readingQuery.isPending;
   const error = sessionQuery.error || wordPairQuery.error || kanaQuery.error || readingQuery.error;
   const mutationError = reviewMutation.error || kanaMutation.error;
+
+  useDwellActivation(cockpitRef);
 
   function submitAnswer(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -154,8 +159,54 @@ export function StudyCockpit() {
     kanaInputRef.current?.focus();
   }
 
+  useEffect(() => {
+    if (activePanel === "drill" && feedback) {
+      document.querySelector<HTMLButtonElement>("[data-study-next-action='drill']")?.focus();
+    }
+  }, [activePanel, feedback]);
+
+  useEffect(() => {
+    if (activePanel === "drill" && !feedback) {
+      answerInputRef.current?.focus();
+    }
+  }, [activePanel, currentIndex, feedback]);
+
+  useEffect(() => {
+    if (activePanel === "kana" && kanaFeedback) {
+      document.querySelector<HTMLButtonElement>("[data-study-next-action='kana']")?.focus();
+    }
+  }, [activePanel, kanaFeedback]);
+
+  useEffect(() => {
+    if (activePanel === "kana" && !kanaFeedback) {
+      kanaInputRef.current?.focus();
+    }
+  }, [activePanel, kanaIndex, kanaFeedback]);
+
+  useEffect(() => {
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.key !== "Enter" || event.defaultPrevented || event.isComposing || event.metaKey || event.ctrlKey || event.altKey) {
+        return;
+      }
+
+      if (activePanel === "drill" && feedback) {
+        event.preventDefault();
+        goNext();
+        return;
+      }
+
+      if (activePanel === "kana" && kanaFeedback) {
+        event.preventDefault();
+        goNextKana();
+      }
+    }
+
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [activePanel, feedback, kanaFeedback, goNext, goNextKana]);
+
   return (
-    <main className="mx-auto flex min-h-screen w-full max-w-6xl flex-col gap-5 px-4 py-5">
+    <main ref={cockpitRef} className="mx-auto flex min-h-screen w-full max-w-6xl flex-col gap-5 px-4 py-5">
       <header className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <p className="text-sm font-semibold uppercase text-muted-foreground">N2 passed · N1 preparation</p>
@@ -399,7 +450,7 @@ function KanaTypingPanel({
                   <InfoRow label="Why" value={feedback.explanation} />
                   <InfoRow label="Keyboard" value={feedback.keyboardTip} />
                 </dl>
-                <Button className="mt-4" type="button" onClick={onNext}>
+                <Button className="mt-4" type="button" onClick={onNext} data-study-next-action="kana">
                   Next kana
                 </Button>
               </div>
@@ -694,7 +745,7 @@ function FeedbackPanel({ feedback, finished, onNext }: { feedback: AnswerFeedbac
           <p className="mt-1 text-muted-foreground">{feedback.reviewFocus.microStory}</p>
         </div>
       ) : null}
-      <Button className="mt-4" type="button" onClick={onNext}>
+      <Button className="mt-4" type="button" onClick={onNext} data-study-next-action="drill">
         {finished ? "Refresh drill" : "Next item"}
       </Button>
     </div>
@@ -798,6 +849,144 @@ function StatCard({ icon, label, value }: { icon: ReactNode; label: string; valu
 
 function ErrorBanner({ message }: { message: string }) {
   return <div className="rounded-md border border-destructive bg-background p-4 text-sm text-destructive">{message}</div>;
+}
+
+function useDwellActivation(containerRef: RefObject<HTMLElement | null>) {
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) {
+      return;
+    }
+
+    const root = container;
+    let timer: number | null = null;
+    let target: HTMLElement | null = null;
+    let startX = 0;
+    let startY = 0;
+    let latestX = 0;
+    let latestY = 0;
+
+    function clearDwell() {
+      if (timer) {
+        window.clearTimeout(timer);
+      }
+
+      target?.removeAttribute("data-dwell-active");
+      timer = null;
+      target = null;
+    }
+
+    function getActivatableTarget(eventTarget: EventTarget | null) {
+      if (!(eventTarget instanceof Element)) {
+        return null;
+      }
+
+      const candidate = eventTarget.closest<HTMLElement>("button, a[href]");
+      if (!candidate || !root.contains(candidate)) {
+        return null;
+      }
+      if (candidate instanceof HTMLButtonElement && candidate.disabled) {
+        return null;
+      }
+      if (candidate.getAttribute("aria-disabled") === "true") {
+        return null;
+      }
+
+      return candidate;
+    }
+
+    function scheduleDwell(nextTarget: HTMLElement, event: PointerEvent) {
+      target?.removeAttribute("data-dwell-active");
+      target = nextTarget;
+      startX = event.clientX;
+      startY = event.clientY;
+      latestX = event.clientX;
+      latestY = event.clientY;
+      target.setAttribute("data-dwell-active", "true");
+
+      if (timer) {
+        window.clearTimeout(timer);
+      }
+
+      timer = window.setTimeout(() => {
+        const currentTarget = target;
+        clearDwell();
+
+        if (currentTarget && isPointerOverTarget(currentTarget, latestX, latestY)) {
+          currentTarget.click();
+        }
+      }, dwellActivationMs);
+    }
+
+    function handlePointerOver(event: PointerEvent) {
+      if (event.pointerType === "touch") {
+        return;
+      }
+
+      const nextTarget = getActivatableTarget(event.target);
+      if (!nextTarget || nextTarget === target) {
+        return;
+      }
+
+      scheduleDwell(nextTarget, event);
+    }
+
+    function handlePointerMove(event: PointerEvent) {
+      if (!target) {
+        return;
+      }
+
+      latestX = event.clientX;
+      latestY = event.clientY;
+
+      if (Math.hypot(latestX - startX, latestY - startY) <= dwellMoveTolerancePx) {
+        return;
+      }
+
+      const currentTarget = getActivatableTarget(event.target);
+      if (currentTarget) {
+        scheduleDwell(currentTarget, event);
+      } else {
+        clearDwell();
+      }
+    }
+
+    function handlePointerOut(event: PointerEvent) {
+      if (!target) {
+        return;
+      }
+
+      if (event.relatedTarget instanceof Node && target.contains(event.relatedTarget)) {
+        return;
+      }
+
+      clearDwell();
+    }
+
+    root.addEventListener("pointerover", handlePointerOver);
+    root.addEventListener("pointermove", handlePointerMove);
+    root.addEventListener("pointerout", handlePointerOut);
+    root.addEventListener("pointercancel", clearDwell);
+    root.addEventListener("pointerdown", clearDwell);
+
+    return () => {
+      clearDwell();
+      root.removeEventListener("pointerover", handlePointerOver);
+      root.removeEventListener("pointermove", handlePointerMove);
+      root.removeEventListener("pointerout", handlePointerOut);
+      root.removeEventListener("pointercancel", clearDwell);
+      root.removeEventListener("pointerdown", clearDwell);
+    };
+  }, [containerRef]);
+}
+
+function isPointerOverTarget(target: HTMLElement, x: number, y: number) {
+  if (typeof document.elementFromPoint !== "function") {
+    return true;
+  }
+
+  const element = document.elementFromPoint(x, y);
+  return element ? target.contains(element) || element === target : true;
 }
 
 function getInstruction(category: StudyCategory): string {

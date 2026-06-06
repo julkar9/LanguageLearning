@@ -15,3 +15,8 @@ button,
 input {
   font: inherit;
 }
+
+[data-dwell-active="true"] {
+  outline: 2px solid color-mix(in srgb, var(--ring) 70%, transparent);
+  outline-offset: 2px;
+}
