@@ -6,6 +6,8 @@ const c = initContract();
 
 export const StudyCategorySchema = z.enum(["vocabulary", "kanji", "grammar", "reading"]);
 
+export const JlptLevelSchema = z.enum(["N5", "N4", "N3", "N2", "N1"]);
+
 export const StudyExampleSchema = z.object({
   japanese: z.string(),
   english: z.string()
@@ -14,7 +16,7 @@ export const StudyExampleSchema = z.object({
 export const StudyItemSchema = z.object({
   id: z.string(),
   category: StudyCategorySchema,
-  level: z.literal("N1"),
+  level: JlptLevelSchema,
   prompt: z.string(),
   reading: z.string(),
   meaning: z.string(),
@@ -230,7 +232,7 @@ export const ReadingLabPassageSchema = z.object({
   id: z.string(),
   title: z.string(),
   theme: z.string(),
-  difficulty: z.literal("N1"),
+  difficulty: JlptLevelSchema,
   estimatedMinutes: z.number(),
   focus: z.string(),
   passage: z.array(z.string()),
@@ -270,6 +272,7 @@ export const ReviewRequestSchema = z.object({
 });
 
 export type StudyCategory = z.infer<typeof StudyCategorySchema>;
+export type JlptLevel = z.infer<typeof JlptLevelSchema>;
 export type StudyExample = z.infer<typeof StudyExampleSchema>;
 export type StudyItem = z.infer<typeof StudyItemSchema>;
 export type LearnerMemory = z.infer<typeof LearnerMemorySchema>;
